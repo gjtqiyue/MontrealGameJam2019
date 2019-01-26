@@ -37,6 +37,16 @@ public class CharacterScript : MonoBehaviour
 
         if (PlayerEffectEnabled)
             CheckMemory();
+
+        // game over
+        if (hunger <= 0)
+        {
+
+        }
+        if (memCollectionOrder.Count == 0)
+        {
+
+        }
     }
 
     // potentially we can set a flag vector in game manager to check for status
@@ -76,7 +86,7 @@ public class CharacterScript : MonoBehaviour
             memories.Add(num, new Memory(memoryLastTime));
         }
         Debug.Log("receive memory " + num);
-        memories[memCollectionOrder.Peek()].Recover();
+        if(memCollectionOrder.Count > 0) memories[memCollectionOrder.Peek()].Recover();
         memCollectionOrder.Enqueue(num);
     }
 
@@ -148,5 +158,10 @@ public class CharacterScript : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void TriggerPickUpAnimation()
+    {
+        fpController.PickUp();
     }
 }

@@ -47,6 +47,8 @@ public class Maze : EditorWindow
             for (int i=0; i<COL_LENGTH; i++)
                 RandomGenerate();
             EndMaze();
+
+            
         }
     }
 
@@ -406,12 +408,12 @@ public class Maze : EditorWindow
         Vector3 startPoint = origin + Vector3.forward * GRID_LENGTH * rowIndex;
 
         // create floor
-        for (int i = 0; i < ROW_LENGTH; i++)
-        {
-            GameObject floorObject = Instantiate(floor, startPoint + Vector3.left * GRID_LENGTH * i, Quaternion.identity);
-            mazeObjects.Add(floorObject.gameObject);
-            floorObject.transform.SetParent(Environment);
-        }
+        //for (int i = 0; i < ROW_LENGTH; i++)
+        //{
+        //    GameObject floorObject = Instantiate(floor, startPoint + Vector3.left * GRID_LENGTH * i, Quaternion.identity);
+        //    mazeObjects.Add(floorObject.gameObject);
+        //    floorObject.transform.SetParent(Environment);
+        //}
 
         //create right side walls
         GameObject wallobject = Instantiate(wall, startPoint + new Vector3((GRID_LENGTH / 2), (GRID_LENGTH / 2), 0f), Quaternion.Euler(0, 90, 0));
@@ -424,6 +426,9 @@ public class Maze : EditorWindow
         {
             // if two cells are not in the same set
             // generate the left walls
+            // add randomness to the wall generation
+            int num1 = Random.Range(0, 2);
+            int num2 = Random.Range(0, 2);
             if (row[i].m_leftWall)
             {
                 Vector3 spawnPoint = startPoint + Vector3.left * GRID_LENGTH * i + new Vector3(-(GRID_LENGTH / 2), (GRID_LENGTH / 2), 0f);

@@ -45,6 +45,7 @@ public abstract class Collectable : MonoBehaviour
         {
             Debug.Log("pick item");
             GetCollected(player);
+            player.TriggerPickUpAnimation();
             this.gameObject.SetActive(false);
         }
     }
