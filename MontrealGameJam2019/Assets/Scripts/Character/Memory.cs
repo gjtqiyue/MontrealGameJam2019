@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 public class Memory
 {
+    private float maxTime;
     private float leftTime;
     private bool lost;
 
     public Memory(float time)
     {
+        maxTime = time;
         leftTime = time;
         lost = false;
     }
@@ -31,5 +33,10 @@ public class Memory
     public float GetLeftTime()
     {
         return leftTime;
+    }
+
+    public void Recover()
+    {
+        leftTime = maxTime;
     }
 }

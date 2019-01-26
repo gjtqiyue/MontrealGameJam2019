@@ -76,6 +76,7 @@ public class CharacterScript : MonoBehaviour
             memories.Add(num, new Memory(memoryLastTime));
         }
         Debug.Log("receive memory " + num);
+        memories[memCollectionOrder.Peek()].Recover();
         memCollectionOrder.Enqueue(num);
     }
 

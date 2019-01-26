@@ -4,8 +4,10 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_GlowColor("GlowColor", Color) = (0, 0, 0)
+		_Intensity("Intensity", Range(0,3)) = 2
 	}
-		SubShader
+
+	SubShader
 	{
 		Tags
 		{
@@ -13,7 +15,7 @@
 			"PerformanceChecks" = "False"
 			"Glowable" = "True"
 	    }
-        LOD 100
+        LOD 300
 
         Pass
         {
@@ -45,10 +47,13 @@
 
 			sampler2D _MainTex;
 			fixed4 _GlowColor;
+			float _intensity;
 
             fixed4 frag (v2f i) : SV_Target
             {
-				return _GlowColor;
+				float4 col = tex2D(_MainTex, i.uv);
+				col *= _GlowColor;
+				return col;
             }
             ENDCG
         }

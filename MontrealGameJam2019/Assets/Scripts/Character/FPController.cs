@@ -34,6 +34,7 @@ public class FPController : MonoBehaviour
 
             rotX = Input.GetAxis("HorizontalTurn");
             rotY = Input.GetAxis("VerticalTurn");
+            if (rotX < 0.001 && rotX > -0.001) rotX = 0;
 
             float angle = rotY * sensitivity * Time.deltaTime;
             float preditAngle = cam.transform.rotation.eulerAngles.x + angle;
