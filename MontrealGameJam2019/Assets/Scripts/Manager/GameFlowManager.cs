@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameFlowManager : ManagerBase<GameFlowManager>
 {
@@ -21,6 +22,9 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	[SerializeField]
 	private Camera mainCamera;
 
+	[SerializeField]
+	private PlayableDirector titleTimeline;
+
 	private GameState gameState = GameState.StartMenu;
 
 	private LevelData currentLevel;
@@ -29,14 +33,23 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	public event Action<LevelData> OnPlayerDead;
 	public event Action<LevelData> OnWin;
 
-	public bool StartGame() {
-		if (gameState != GameState.StartMenu) return false;
+	public void Start() {
+		titleTimeline.Stop();
+	}
+
+	public IEnumerator StartGame() {
+		if (gameState != GameState.StartMenu) yield break;
+		titleTimeline.Play();
+
+		yield return new WaitForSeconds(2.5f);
 		player.SetActive(true);
+		
 		mainCamera.gameObject.SetActive(false);
+		titleTimeline.time = 0;
 		currentLevel = levelDatas.LevelDatas[0];
 		gameState = GameState.InGame;
 		UIManager.Instance.StartGame();
-		return true;
+		yield return null;
 	}
 
 	public bool DecreaseLevel() {
