@@ -14,7 +14,7 @@ public class FPController : MonoBehaviour
     float rotX;
     float rotY;
 
-    public bool PlayerMovementEnabled;         // the player is only able to move when the attribute is set to true
+    public bool PlayerMovementEnabled = false;         // the player is only able to move when the attribute is set to true
 
     // Use this for initialization
     void Start()
