@@ -77,6 +77,7 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 		currentPieceTranform = o.transform;
 		Collectable c = o.GetComponent<Collectable>();
 		c.handPosition = hand;
+		c.GetComponentInChildren<InteractText>().target = player.gameObject;
 		foreach (Transform childTrans in currentPieceTranform) {
 			if (childTrans.tag == "Minimap") {
 				minimapIcons.Add(childTrans);
