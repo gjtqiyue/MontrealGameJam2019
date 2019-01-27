@@ -39,4 +39,8 @@ public class Memory
     {
         leftTime = maxTime;
     }
+
+	public float GetMaxTime() {
+		return maxTime;
+	}
 }

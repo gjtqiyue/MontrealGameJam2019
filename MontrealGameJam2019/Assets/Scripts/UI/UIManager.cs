@@ -11,6 +11,8 @@ public class UIManager : ManagerBase<UIManager>
 	private Transform uiParent;
 
 	private Dictionary<string, GameObject> activeUIs;
+
+	//names to relate the ui and prefab
 	private string titleUIName = "title";
 	private string inGameUIName = "inGame";
 	private string deadGameUIName = "dead";
@@ -25,8 +27,9 @@ public class UIManager : ManagerBase<UIManager>
 
 	}
 
-	public void StartGame() {
+	public GameObject StartGame() {
 		RemoveAndAdd(titleUIName, inGameUIName);
+		return activeUIs[inGameUIName];
 	}
 
 	private void RemoveAndAdd(string uiToRemove, string uiToAdd) {

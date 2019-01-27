@@ -29,6 +29,8 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	private LevelData currentLevel;
 
+	private InGameUI inGameUI;
+
 	public event Action<LevelData> OnLevelRefresh;
 	public event Action<LevelData> OnPlayerDead;
 	public event Action<LevelData> OnWin;
@@ -43,13 +45,25 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 		yield return new WaitForSeconds(2.5f);
 		player.SetActive(true);
-		
+
+		CharacterScript sc = player.GetComponent<CharacterScript>();
+
 		mainCamera.gameObject.SetActive(false);
 		titleTimeline.time = 0;
 		currentLevel = levelDatas.LevelDatas[0];
 		gameState = GameState.InGame;
-		UIManager.Instance.StartGame();
+		inGameUI = UIManager.Instance.StartGame().GetComponent<InGameUI>();
+		if(inGameUI != null) {
+			inGameUI.Initialize(sc);
+		}
 		yield return null;
+	}
+
+	//activate the in game ui
+	public void ActivateInGameUI() {
+		if(inGameUI != null) {
+			inGameUI.ActivateUI();
+		}
 	}
 
 	public bool DecreaseLevel() {
@@ -71,7 +85,12 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	public bool PlayerDead() {
 		if (gameState != GameState.InGame) return false;
 		gameState = GameState.Dead;
+		CharacterScript sc = player.GetComponent<CharacterScript>();
+		if (inGameUI != null) {
+			inGameUI.Destroy(sc);
+		}
 		UIManager.Instance.DeadGame();
+
 		safeInvoke(OnPlayerDead);
 		return true;
 	}

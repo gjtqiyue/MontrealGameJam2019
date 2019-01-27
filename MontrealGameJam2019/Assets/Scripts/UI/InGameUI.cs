@@ -18,11 +18,34 @@ public class InGameUI : MonoBehaviour
 	[SerializeField]
 	private Image hungerIndicator;
 
+	[SerializeField]
+	private GameObject hungerPrefab;
 
+	public bool IsUIShown = false;
 	private void Awake() {
 		memories = new Queue<Image>();
-		AddMemory(3);
-		//StartCoroutine(decreaseMemory());
+	}
+
+	//initialize to add ui action when the player states changed
+	public void Initialize(CharacterScript c) {
+		c.OnHungerChanged += ChangeHunger;
+		c.OnMemoryDecreased += DecreaseMemory;
+		c.OnMemoryIncreased += AddMemory;
+	}
+
+	//initialize to add ui action when the player states changed
+	public void Destroy(CharacterScript c) {
+		c.OnHungerChanged -= ChangeHunger;
+		c.OnMemoryDecreased -= DecreaseMemory;
+		c.OnMemoryIncreased -= AddMemory;
+	}
+
+	public void ActivateUI() {
+		hungerPrefab.SetActive(true);
+		foreach(Image i in memories) {
+			i.gameObject.SetActive(true);
+		}
+		IsUIShown = true;
 	}
 
 	public void AddMemory(float memory) {
@@ -41,7 +64,16 @@ public class InGameUI : MonoBehaviour
 	}
 
 	public void DecreaseMemory(float amount) {
+		if (memories.Count <= 0) {
+			Debug.Log(11);
+			return;
+
+		}
+
 		Image memory = memories.Peek();
+		if (memory == null) return;
+
+
 		if(memory.color.a > amount) {
 			memory.color = new Color(memory.color.r, memory.color.g, memory.color.b, memory.color.a-amount);
 		} else {
@@ -50,15 +82,9 @@ public class InGameUI : MonoBehaviour
 		}
 	}
 
-	private IEnumerator decreaseMemory() {
-		while (true) {
-			ChangeHunger(-0.1f);
-			yield return new WaitForSeconds(0.2f);
-		}
-		
-	}
-
 	private void ChangeHunger(float amount) {
+		if (hungerIndicator == null) return;
+
 		if(hungerIndicator.fillAmount + amount > 1) {
 			hungerIndicator.fillAmount = 1;
 		}else if(hungerIndicator.fillAmount + amount < 0) {
@@ -73,6 +99,9 @@ public class InGameUI : MonoBehaviour
 		memory.transform.localPosition = new Vector3(memoryDistance * memories.Count, 0, 0);
 		var image = memory.GetComponent<Image>();
 		image.fillAmount = fillAmount;
+		if (!IsUIShown) {
+			image.gameObject.SetActive(false);
+		}
 		memories.Enqueue(image);
 	}
 
