@@ -181,20 +181,70 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ff92f775213498498a65bc50dc6a7d9e
-    m_lastTime: -8586530648874775808
-    List: []
+    m_lastTime: -8586530122534775808
+    List:
+    - name: REVERB_EXT
+      guid: 39e5c2f788698f42b33bb3db84e71a7f
+      id: 3135882657
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: REVERB_EXT
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/REVERB_EXT
+    - name: REVERB_MAGIE
+      guid: 8b9422377ff2da4ab2ccdbae80c44d06
+      id: 3603102263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: REVERB_MAGIE
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/REVERB_MAGIE
   BankWwu:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5bac9261922494449d27b3dd9bb9fcce
-    m_lastTime: -8586531442934775808
+    m_lastTime: -8586530134144775808
     List: []
+  - PhysicalPath: SoundBanks/GJ.wwu
+    ParentPhysicalPath: SoundBanks/Default Work Unit.wwu
+    guid: 6a2bb834e71a5e4bb8b4c867134ba07e
+    m_lastTime: -8586530091364775808
+    List:
+    - name: Soundbank_GJ
+      guid: 39d91d84bbc75f4bbb1d406c8e2a8c74
+      id: 197860068
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GJ
+        ObjectType: 12
+      - ElementName: Soundbank_GJ
+        ObjectType: 7
+      Path: Default Work Unit/GJ/Soundbank_GJ
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e66fb39a9cf2e44296c11d4a76c6c669
-    m_lastTime: -8586530632134775808
+    m_lastTime: -8586530091364775808
     List:
+    - name: GAME_START
+      guid: 2d1780bbd2c622498573d565b352f54a
+      id: 733168346
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME_START
+        ObjectType: 3
+      Path: Default Work Unit/GAME_START
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Flashlight_ONOFF_01
       guid: 9ccd6625b0952940aad62a4b410ba79e
       id: 2698074747
@@ -219,6 +269,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_GJ_UI_SELECT_BUTTON
+      guid: 30568da566075b4cbb2a1753ffcd4b2e
+      id: 1352814712
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GJ_UI_SELECT_BUTTON
+        ObjectType: 3
+      Path: Default Work Unit/Play_GJ_UI_SELECT_BUTTON
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_GRAVE_OPENING
       guid: 4c37011753e4134a9d590096e2397acf
       id: 1403698928
@@ -228,6 +290,18 @@ MonoBehaviour:
       - ElementName: Play_GRAVE_OPENING
         ObjectType: 3
       Path: Default Work Unit/Play_GRAVE_OPENING
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GRAVEYARD_AMBIANCE_NIGHT
+      guid: f83d3e3a9e9551459a0dd44f69507299
+      id: 1123583895
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GRAVEYARD_AMBIANCE_NIGHT
+        ObjectType: 3
+      Path: Default Work Unit/Play_GRAVEYARD_AMBIANCE_NIGHT
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -255,6 +329,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_PLAYER_DEATH_ALIVE
+      guid: 17d604b3c420fd4b8e7919d0d14ff774
+      id: 2110825224
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PLAYER_DEATH_ALIVE
+        ObjectType: 3
+      Path: Default Work Unit/Play_PLAYER_DEATH_ALIVE
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_PLAYER_FOOTSTEPS
       guid: e4accf9d0845914ba407d904775f2564
       id: 98439365
@@ -276,6 +362,18 @@ MonoBehaviour:
       - ElementName: Play_PLAYER_KNOCK_GRAVE
         ObjectType: 3
       Path: Default Work Unit/Play_PLAYER_KNOCK_GRAVE
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_TIMER
+      guid: 62086600a636844989bcb229912cd7f3
+      id: 68781742
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_TIMER
+        ObjectType: 3
+      Path: Default Work Unit/Play_UI_TIMER
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -406,8 +504,41 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters/GAME JAM.wwu
     ParentPhysicalPath: Game Parameters/Default Work Unit.wwu
     guid: 4f372c167ace2d439fcedcefdac4f19d
-    m_lastTime: -8586530656934775808
+    m_lastTime: -8586530134144775808
     List:
+    - name: GRAVEINOUT
+      guid: e14fb2e92039cf4a97672fabe82c433c
+      id: 4062711815
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: GRAVEINOUT
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/GRAVEINOUT
+    - name: HEALTH
+      guid: 016f65bdcdc7da4ba5c684eb8aafd758
+      id: 3677180323
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: HEALTH
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/HEALTH
+    - name: SIDE_CHAIN_PICKUP
+      guid: 462827c34255e9499f209b772447df39
+      id: 1651955069
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: SIDE_CHAIN_PICKUP
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/SIDE_CHAIN_PICKUP
     - name: TIME_OF_DAY
       guid: 17274c31e4ce2347a900059216a36034
       id: 207908541
@@ -423,20 +554,73 @@ MonoBehaviour:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bddcc3c3c3912e4c8a21c7023fb9dcf5
-    m_lastTime: -8586531442934775808
-    List: []
+    m_lastTime: -8586530171414775808
+    List:
+    - name: DEATH_ALIVE
+      guid: 1604f1f7ebec7c4e891e2d08ed2c2772
+      id: 1453929399
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DEATH_ALIVE
+        ObjectType: 9
+      Path: Default Work Unit/DEATH_ALIVE
+      values:
+      - name: ALIVE
+        guid: b4d15d00e72d4e458bbc10094dc04585
+        id: 655265632
+        PathAndIcons:
+        - ElementName: ALIVE
+          ObjectType: 8
+      - name: DEATH
+        guid: db4f4bb95873254393deb915e08bb3ca
+        id: 779278001
+        PathAndIcons:
+        - ElementName: DEATH
+          ObjectType: 8
+      - name: None
+        guid: c4d84e74669ee646924b47123d155b0c
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 408fab834f16f44b8658ef5b18d2c0ff
-    m_lastTime: -8586531442934775808
-    List: []
+    m_lastTime: -8586530176514775808
+    List:
+    - name: FOODGOODBAD
+      guid: 5c39017ac361ff4db68b934d9fde93af
+      id: 305217939
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FOODGOODBAD
+        ObjectType: 11
+      Path: Default Work Unit/FOODGOODBAD
+      values:
+      - name: BAD
+        guid: b8e365aadac2904a81214a2f83688da0
+        id: 513390134
+        PathAndIcons:
+        - ElementName: BAD
+          ObjectType: 10
+      - name: GOOD
+        guid: 49225016aa67d9479f98367604831cd1
+        id: 668632890
+        PathAndIcons:
+        - ElementName: GOOD
+          ObjectType: 10
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 68714925bf50864287233c7f60e14a98
     m_lastTime: -8586531442924775808
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /MTL_GAMEJAM_2019
+  - /MTL_GAMEJAM_2019/Events
+  - /MTL_GAMEJAM_2019/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
