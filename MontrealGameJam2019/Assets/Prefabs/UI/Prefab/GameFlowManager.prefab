@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9539243751922174980a34c36ef82f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   levelDatas: {fileID: 11400000, guid: a6bbe5caeb0ae9c4988608bcdbdc87b9, type: 2}
   player: {fileID: 0}
   mainCamera: {fileID: 0}
   titleTimeline: {fileID: 0}
+  endingTimeline: {fileID: 0}
 --- !u!114 &133560588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,3 +69,9 @@ MonoBehaviour:
   distance: 7
   spotParent: {fileID: 0}
   hand: {fileID: 0}
+  familyPhotos:
+  - {fileID: 5690159147306028116, guid: 354ec41124946f34aba4165a38445828, type: 3}
+  - {fileID: 6602919298797162859, guid: 660bb960eaad0cf4bb81a06752ced765, type: 3}
+  - {fileID: 2694037023304039481, guid: 6a69f346813658c47838ce877767aa9b, type: 3}
+  - {fileID: 3046179800195209378, guid: fa20c75e508f4d84c85f693fb1c63dcb, type: 3}
+  - {fileID: 3605889211242081966, guid: 1fa18351f101fbe488dff9ab60f309d0, type: 3}

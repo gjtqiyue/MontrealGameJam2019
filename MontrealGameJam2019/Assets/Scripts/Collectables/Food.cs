@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Food : Collectable
 {
-    public int fillPerFood = 3;
+    public int fillPerFood = 5;
 
     public override void GetCollected(CharacterScript player)
     {
