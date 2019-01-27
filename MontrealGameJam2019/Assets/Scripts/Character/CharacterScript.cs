@@ -73,11 +73,7 @@ public class CharacterScript : MonoBehaviour
         int num = memCollectionOrder.Peek();
         if (memories[num].IsLost())
         {
-            int num = memCollectionOrder.Peek();
-            if (memories[num].IsLost())
-            {
-                LoseMemory();
-            }
+			LoseMemory();
         }
     }
 
