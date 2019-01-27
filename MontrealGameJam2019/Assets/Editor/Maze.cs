@@ -416,7 +416,7 @@ public class Maze : EditorWindow
         //}
 
         //create right side walls
-        GameObject wallobject = Instantiate(wall, startPoint + new Vector3((GRID_LENGTH / 2), (GRID_LENGTH / 2), 0f), Quaternion.Euler(0, 90, 0));
+        GameObject wallobject = Instantiate(wall, startPoint + new Vector3((GRID_LENGTH / 2), 0, 0f), Quaternion.Euler(0, 90, 0));
         mazeObjects.Add(wallobject.gameObject);
         wallobject.transform.SetParent(Environment);
 
@@ -431,7 +431,7 @@ public class Maze : EditorWindow
             int num2 = Random.Range(0, 2);
             if (row[i].m_leftWall)
             {
-                Vector3 spawnPoint = startPoint + Vector3.left * GRID_LENGTH * i + new Vector3(-(GRID_LENGTH / 2), (GRID_LENGTH / 2), 0f);
+                Vector3 spawnPoint = startPoint + Vector3.left * GRID_LENGTH * i + new Vector3(-(GRID_LENGTH / 2), 0, 0f);
                 GameObject leftWall = Instantiate(wall, spawnPoint, Quaternion.Euler(0, 90, 0));
 
                 mazeObjects.Add(leftWall.gameObject);
@@ -441,7 +441,8 @@ public class Maze : EditorWindow
             // generate the front walls
             if (row[i].m_frontWall)
             {
-                Vector3 spawnPoint = startPoint + Vector3.left * GRID_LENGTH * i + new Vector3(0, (GRID_LENGTH / 2), (GRID_LENGTH / 2));
+                Vector3 spawnPoint = startPoint + Vector3.left * GRID_LENGTH * i + new Vector3(-2.5f, 0, (GRID_LENGTH / 2));
+                Debug.Log(spawnPoint + " ");
                 GameObject frontWall = Instantiate(wall, spawnPoint, Quaternion.identity);
                 mazeObjects.Add(frontWall.gameObject);
                 frontWall.transform.SetParent(Environment);

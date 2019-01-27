@@ -23,6 +23,7 @@ public class FPController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        anim.SetBool("PlayerControlling", false);
     }
     
 
@@ -66,10 +67,6 @@ public class FPController : MonoBehaviour
                 // fast turning
                 StartCoroutine(TurnAnimation());
             }
-        }
-        else
-        {
-            anim.SetBool("PlayerControlling", false);
         }
     }
 

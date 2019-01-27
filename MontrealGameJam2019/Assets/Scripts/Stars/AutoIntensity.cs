@@ -20,7 +20,7 @@ public class AutoIntensity : MonoBehaviour {
     public float fogScale = 1f;
 
     public float dayAtmosphereThickness = 0.4f;
-    public float nightAtmosphereThickness = 0.87f;
+    public float nightAtmosphereThickness = 0.33f;
 
     public Vector3 dayRotateSpeed;
     public Vector3 nightRotateSpeed;
@@ -44,33 +44,36 @@ public class AutoIntensity : MonoBehaviour {
 
     void Update ()
     {
+        if (nightDaySwitch)
+        {
 
-        float tRange = 1 - minPoint;
-        float dot = Mathf.Clamp01 ((Vector3.Dot (mainLight.transform.forward, Vector3.down) - minPoint) / tRange);
-        float i = ((maxIntensity - minIntensity) * dot) + minIntensity;
+            float tRange = 1 - minPoint;
+            float dot = Mathf.Clamp01((Vector3.Dot(mainLight.transform.forward, Vector3.down) - minPoint) / tRange);
+            float i = ((maxIntensity - minIntensity) * dot) + minIntensity;
 
-        mainLight.intensity = i;
+            mainLight.intensity = i;
 
-        tRange = 1 - minAmbientPoint;
-        dot = Mathf.Clamp01 ((Vector3.Dot (mainLight.transform.forward, Vector3.down) - minAmbientPoint) / tRange);
-        i = ((maxAmbient - minAmbient) * dot) + minAmbient;
-        RenderSettings.ambientIntensity = i;
+            tRange = 1 - minAmbientPoint;
+            dot = Mathf.Clamp01((Vector3.Dot(mainLight.transform.forward, Vector3.down) - minAmbientPoint) / tRange);
+            i = ((maxAmbient - minAmbient) * dot) + minAmbient;
+            RenderSettings.ambientIntensity = i;
 
-        mainLight.color = nightDayColor.Evaluate(dot);
-        RenderSettings.ambientLight = mainLight.color;
+            mainLight.color = nightDayColor.Evaluate(dot);
+            RenderSettings.ambientLight = mainLight.color;
 
-        RenderSettings.fogColor = nightDayFogColor.Evaluate(dot);
-        RenderSettings.fogDensity = fogDensityCurve.Evaluate(dot) * fogScale;
+            RenderSettings.fogColor = nightDayFogColor.Evaluate(dot);
+            RenderSettings.fogDensity = fogDensityCurve.Evaluate(dot) * fogScale;
 
-        i = ((dayAtmosphereThickness - nightAtmosphereThickness) * dot) + nightAtmosphereThickness;
-        skyMat.SetFloat ("_AtmosphereThickness", i);
+            i = ((dayAtmosphereThickness - nightAtmosphereThickness) * dot) + nightAtmosphereThickness;
+            skyMat.SetFloat("_AtmosphereThickness", i);
 
-        if (dot > 0 && mainLight.intensity < 1.5 && nightDaySwitch)
-            transform.Rotate (dayRotateSpeed * Time.deltaTime * skySpeed);
-        else if (mainLight.intensity < 1.5 && nightDaySwitch)
-            transform.Rotate (nightRotateSpeed * Time.deltaTime * skySpeed);
+            if (dot > 0 && mainLight.intensity < 1.5 && nightDaySwitch)
+                transform.Rotate(dayRotateSpeed * Time.deltaTime * skySpeed);
+            else if (mainLight.intensity < 1.5 && nightDaySwitch)
+                transform.Rotate(nightRotateSpeed * Time.deltaTime * skySpeed);
 
-            DayNightSwitch ();
+            DayNightSwitch();
+        }
       }
 
       void DayNightSwitch ()

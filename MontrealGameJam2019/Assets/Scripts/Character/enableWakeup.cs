@@ -8,18 +8,24 @@ public class enableWakeup : MonoBehaviour
   public Animator malcolmAnim;
   public Animator characterAnim;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
       if (coffinDoorAnim.GetCurrentAnimatorStateInfo(0).IsName("RotateDoor"))
-      characterAnim.SetTrigger("EnableWakeup");
+        characterAnim.SetTrigger("EnableWakeup");
 
+    }
+
+    public void DeactivateAnimator()
+    {
+        characterAnim.enabled = false;
+
+        // call the game manager to show the player the note
+        GameFlowManager.Instance.StartCoroutine(GameFlowManager.Instance.AquireTheFirstMemory());
+    }
+
+    public void OpenCoffin()
+    {
+        coffinDoorAnim.SetTrigger("CoffinDoorOpen");
     }
 }

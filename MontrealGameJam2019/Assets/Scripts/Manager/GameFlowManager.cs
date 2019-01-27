@@ -31,36 +31,73 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	private InGameUI inGameUI;
 
+    private Narrative storyTeller;
+
 	public event Action<LevelData> OnLevelRefresh;
 	public event Action<LevelData> OnPlayerDead;
 	public event Action<LevelData> OnWin;
 
 	public void Start() {
 		titleTimeline.Stop();
-	}
+        storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
+    }
 
 	public IEnumerator StartGame() {
 		if (gameState != GameState.StartMenu) yield break;
 		titleTimeline.Play();
 
 		yield return new WaitForSeconds(2.5f);
+
+        // trigger the open eyes effect
+        OpenEyeEffect eye = UIManager.Instance.gameObject.GetComponentInChildren<OpenEyeEffect>();
+        if (eye != null) eye.Activate();
+        else Debug.Log("No eye");
+
 		player.SetActive(true);
 
-		CharacterScript sc = player.GetComponent<CharacterScript>();
+        inGameUI = UIManager.Instance.StartGame().GetComponent<InGameUI>();
 
-		mainCamera.gameObject.SetActive(false);
+        mainCamera.gameObject.SetActive(false);
 		titleTimeline.time = 0;
 		currentLevel = levelDatas.LevelDatas[0];
 		gameState = GameState.InGame;
-		inGameUI = UIManager.Instance.StartGame().GetComponent<InGameUI>();
-		if(inGameUI != null) {
-			inGameUI.Initialize(sc);
-		}
-		yield return null;
+
+        storyTeller.OnNarrativeSpeak("Where am I...... \n and.... who am I.......");
+
+        // trigger the cuffin to open the door
+        player.GetComponent<enableWakeup>().OpenCoffin();
+
+        yield return null;
 	}
 
+    public IEnumerator AquireTheFirstMemory()
+    {
+        // Look at the note and think about it
+        // TODO
+
+        yield return new WaitForSeconds(2);
+
+        storyTeller.OnNarrativeSpeak("What home means to me...... maybe I will figure it out if I can find more clue");
+
+        CharacterScript sc = player.GetComponent<CharacterScript>();
+ 
+        if (inGameUI != null)
+        {
+            inGameUI.Initialize(sc);
+        }
+
+        ActivateInGameUI();
+
+        // enable the movement control and game starts
+        player.GetComponent<CharacterScript>().enabled = true;
+        player.GetComponent<Rigidbody>().useGravity = true;
+        player.GetComponent<FPController>().PlayerMovementEnabled = true;
+
+        yield return null;
+    }
+
 	//activate the in game ui
-	public void ActivateInGameUI() {
+	private void ActivateInGameUI() {
 		if(inGameUI != null) {
 			inGameUI.ActivateUI();
 		}

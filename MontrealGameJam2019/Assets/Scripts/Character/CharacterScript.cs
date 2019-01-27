@@ -111,7 +111,7 @@ public class CharacterScript : MonoBehaviour
 
     IEnumerator DecreaseMemory()
     {
-        while (Time.time < 360)
+        while (Time.time < 5000 && memCollectionOrder.Count > 0)
         {
             // if the player is controlling the game
             if (PlayerEffectEnabled && memCollectionOrder.Count>0)
@@ -136,7 +136,7 @@ public class CharacterScript : MonoBehaviour
     // Hunger part
     IEnumerator DecreaseHunger()
     {
-        while (Time.time < 360)
+        while (Time.time < 5000 && hunger > 0)
         {
             if (PlayerEffectEnabled)
             {
