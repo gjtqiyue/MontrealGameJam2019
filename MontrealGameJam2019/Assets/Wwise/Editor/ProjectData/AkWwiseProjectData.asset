@@ -1,0 +1,626 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70845236d80374b5bad6b1f3290c8c89, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: bb9e6d0ebf20df4eb381647461783f12
+    m_lastTime: -8586531442924775808
+    List: []
+  - PhysicalPath: Virtual Acoustics/Factory Reflect Acoustic Textures.wwu
+    ParentPhysicalPath: 
+    guid: 6b663d46a83ca54f8b4a5fef12b883f6
+    m_lastTime: -8586611018634775808
+    List:
+    - name: Acoustic_Banner
+      guid: f2532d2fccda8e408b8898b1b52a26d6
+      id: 4168643977
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Acoustic_Banner
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Acoustic_Banner
+    - name: Anechoic
+      guid: 32c20a8be202de4ebeacfdd1a900e3ed
+      id: 1873957695
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Anechoic
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Anechoic
+    - name: Brick
+      guid: a9a586b004f2534ca838bdb18b18f6d6
+      id: 504532776
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Brick
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Brick
+    - name: Carpet
+      guid: 8975223456dc604296c4b9f4b669092b
+      id: 2412606308
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Carpet
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Carpet
+    - name: Concrete
+      guid: 001cf85c9628e04aaf7c3080bdaba682
+      id: 841620460
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Concrete
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Concrete
+    - name: Cork_Tiles
+      guid: 19c9d2305f92434189063dbb3c4ae5e2
+      id: 3195498748
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Cork_Tiles
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Cork_Tiles
+    - name: Curtains
+      guid: 339ee6f8975c6849b508a1535f2d66e8
+      id: 2928161104
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Curtains
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Curtains
+    - name: Drywall
+      guid: f4e3a4680b4c8746a8b8a84db93dbc8f
+      id: 3670307564
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Drywall
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Drywall
+    - name: Fabric
+      guid: 32d581836edbed4ea7a3bc7b0a0b8ba8
+      id: 1970351858
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Fabric
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Fabric
+    - name: Mountain
+      guid: 313793c51a00b44a98dd9b033a8c8eab
+      id: 513139656
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Mountain
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Mountain
+    - name: Tile
+      guid: c4da82a82a13b747ba9db9907ba29cc0
+      id: 2637588553
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Tile
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Tile
+    - name: Wood
+      guid: 96bcff1fe76f9e48ba6c7c14a71391ae
+      id: 2058049674
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood
+    - name: Wood_Bright
+      guid: e5d1857ba2c1634e9a13cec54b641adc
+      id: 4262522749
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Bright
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood_Bright
+    - name: Wood_Deep
+      guid: 8e474652dac50c4ea0dec98d1479529a
+      id: 1755085759
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Deep
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood_Deep
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ff92f775213498498a65bc50dc6a7d9e
+    m_lastTime: -8586530122534775808
+    List:
+    - name: REVERB_EXT
+      guid: 39e5c2f788698f42b33bb3db84e71a7f
+      id: 3135882657
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: REVERB_EXT
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/REVERB_EXT
+    - name: REVERB_MAGIE
+      guid: 8b9422377ff2da4ab2ccdbae80c44d06
+      id: 3603102263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: REVERB_MAGIE
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/REVERB_MAGIE
+  BankWwu:
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 5bac9261922494449d27b3dd9bb9fcce
+    m_lastTime: -8586530134144775808
+    List: []
+  - PhysicalPath: SoundBanks/GJ.wwu
+    ParentPhysicalPath: SoundBanks/Default Work Unit.wwu
+    guid: 6a2bb834e71a5e4bb8b4c867134ba07e
+    m_lastTime: -8586530091364775808
+    List:
+    - name: Soundbank_GJ
+      guid: 39d91d84bbc75f4bbb1d406c8e2a8c74
+      id: 197860068
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GJ
+        ObjectType: 12
+      - ElementName: Soundbank_GJ
+        ObjectType: 7
+      Path: Default Work Unit/GJ/Soundbank_GJ
+  EventWwu:
+  - PhysicalPath: Events/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e66fb39a9cf2e44296c11d4a76c6c669
+    m_lastTime: -8586530091364775808
+    List:
+    - name: GAME_START
+      guid: 2d1780bbd2c622498573d565b352f54a
+      id: 733168346
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME_START
+        ObjectType: 3
+      Path: Default Work Unit/GAME_START
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Flashlight_ONOFF_01
+      guid: 9ccd6625b0952940aad62a4b410ba79e
+      id: 2698074747
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Flashlight_ONOFF_01
+        ObjectType: 3
+      Path: Default Work Unit/Play_Flashlight_ONOFF_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_FOOD_PICKUP
+      guid: f65d4ca1e1cf0f46a14c291d5a31cf09
+      id: 3701980593
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_FOOD_PICKUP
+        ObjectType: 3
+      Path: Default Work Unit/Play_FOOD_PICKUP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GJ_UI_SELECT_BUTTON
+      guid: 30568da566075b4cbb2a1753ffcd4b2e
+      id: 1352814712
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GJ_UI_SELECT_BUTTON
+        ObjectType: 3
+      Path: Default Work Unit/Play_GJ_UI_SELECT_BUTTON
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GRAVE_OPENING
+      guid: 4c37011753e4134a9d590096e2397acf
+      id: 1403698928
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GRAVE_OPENING
+        ObjectType: 3
+      Path: Default Work Unit/Play_GRAVE_OPENING
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GRAVEYARD_AMBIANCE_NIGHT
+      guid: f83d3e3a9e9551459a0dd44f69507299
+      id: 1123583895
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GRAVEYARD_AMBIANCE_NIGHT
+        ObjectType: 3
+      Path: Default Work Unit/Play_GRAVEYARD_AMBIANCE_NIGHT
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GRAVEYARD_AMBIANCE_TIMEOFDAY
+      guid: d0d96ea5c4153241aa9078d5841ccbf6
+      id: 1160194499
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GRAVEYARD_AMBIANCE_TIMEOFDAY
+        ObjectType: 3
+      Path: Default Work Unit/Play_GRAVEYARD_AMBIANCE_TIMEOFDAY
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_MEMORY_PICKUP
+      guid: c613ced9a1890c4eb6b82451d357d661
+      id: 434982298
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_MEMORY_PICKUP
+        ObjectType: 3
+      Path: Default Work Unit/Play_MEMORY_PICKUP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_PLAYER_DEATH_ALIVE
+      guid: 17d604b3c420fd4b8e7919d0d14ff774
+      id: 2110825224
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PLAYER_DEATH_ALIVE
+        ObjectType: 3
+      Path: Default Work Unit/Play_PLAYER_DEATH_ALIVE
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_PLAYER_FOOTSTEPS
+      guid: e4accf9d0845914ba407d904775f2564
+      id: 98439365
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PLAYER_FOOTSTEPS
+        ObjectType: 3
+      Path: Default Work Unit/Play_PLAYER_FOOTSTEPS
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_PLAYER_KNOCK_GRAVE
+      guid: 690ec33eb0b6554aad0abea6f6555597
+      id: 2892140914
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PLAYER_KNOCK_GRAVE
+        ObjectType: 3
+      Path: Default Work Unit/Play_PLAYER_KNOCK_GRAVE
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_TIMER
+      guid: 62086600a636844989bcb229912cd7f3
+      id: 68781742
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_TIMER
+        ObjectType: 3
+      Path: Default Work Unit/Play_UI_TIMER
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 15690edc9baaae408d36c439e688ef0d
+    m_lastTime: -8586530656934775808
+    List: []
+  - PhysicalPath: Game Parameters/Factory Motion.wwu
+    ParentPhysicalPath: 
+    guid: 225213d7dbd1d042adc0930743567776
+    m_lastTime: -8586611018634775808
+    List:
+    - name: Playback_Rate
+      guid: e37e38283ac11643b9c3db5c521624af
+      id: 1524500807
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: Playback_Rate
+        ObjectType: 13
+      Path: Factory Motion/Playback_Rate
+    - name: RPM
+      guid: 05aa129177f5fd449f4e4424158129e6
+      id: 796049864
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: RPM
+        ObjectType: 13
+      Path: Factory Motion/RPM
+  - PhysicalPath: Game Parameters/Factory SoundSeed Air Game Syncs.wwu
+    ParentPhysicalPath: 
+    guid: 5577163b42fb8b4598bf96f557afb3b9
+    m_lastTime: -8586611018634775808
+    List:
+    - name: SS_Air_Fear
+      guid: 59062ef746431c4ea1b1dab46a05101e
+      id: 1351367891
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fear
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fear
+    - name: SS_Air_Freefall
+      guid: 37fe2d2f9e4f944d83d853cca39781ad
+      id: 3002758120
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Freefall
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Freefall
+    - name: SS_Air_Fury
+      guid: dc79aea23acaba4696529986c322a87b
+      id: 1029930033
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fury
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fury
+    - name: SS_Air_Month
+      guid: 45b4e209a3c47f44b3ca818a1d925ef7
+      id: 2648548617
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Month
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Month
+    - name: SS_Air_Presence
+      guid: 1a81b7e32f7b0f49b44f5fe51b468041
+      id: 3847924954
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Presence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Presence
+    - name: SS_Air_RPM
+      guid: ab9048a3d5b92645a64d5290c43ef2dc
+      id: 822163944
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_RPM
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_RPM
+    - name: SS_Air_Size
+      guid: efeb291393a12e47a38c64668b494879
+      id: 3074696722
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Size
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Size
+    - name: SS_Air_Storm
+      guid: db8c3fe9d1063747acaf7cd44bbed783
+      id: 3715662592
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Storm
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Storm
+    - name: SS_Air_TimeOfDay
+      guid: 2ca76f537e8c8b4cae03ef34fdadc314
+      id: 3203397129
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_TimeOfDay
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_TimeOfDay
+    - name: SS_Air_Turbulence
+      guid: 197ba8edaa73a0409f192073606db710
+      id: 4160247818
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Turbulence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Turbulence
+  - PhysicalPath: Game Parameters/GAME JAM.wwu
+    ParentPhysicalPath: Game Parameters/Default Work Unit.wwu
+    guid: 4f372c167ace2d439fcedcefdac4f19d
+    m_lastTime: -8586530134144775808
+    List:
+    - name: GRAVEINOUT
+      guid: e14fb2e92039cf4a97672fabe82c433c
+      id: 4062711815
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: GRAVEINOUT
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/GRAVEINOUT
+    - name: HEALTH
+      guid: 016f65bdcdc7da4ba5c684eb8aafd758
+      id: 3677180323
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: HEALTH
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/HEALTH
+    - name: SIDE_CHAIN_PICKUP
+      guid: 462827c34255e9499f209b772447df39
+      id: 1651955069
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: SIDE_CHAIN_PICKUP
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/SIDE_CHAIN_PICKUP
+    - name: TIME_OF_DAY
+      guid: 17274c31e4ce2347a900059216a36034
+      id: 207908541
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME JAM
+        ObjectType: 12
+      - ElementName: TIME_OF_DAY
+        ObjectType: 13
+      Path: Default Work Unit/GAME JAM/TIME_OF_DAY
+  StateWwu:
+  - PhysicalPath: States/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: bddcc3c3c3912e4c8a21c7023fb9dcf5
+    m_lastTime: -8586530171414775808
+    List:
+    - name: DEATH_ALIVE
+      guid: 1604f1f7ebec7c4e891e2d08ed2c2772
+      id: 1453929399
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DEATH_ALIVE
+        ObjectType: 9
+      Path: Default Work Unit/DEATH_ALIVE
+      values:
+      - name: ALIVE
+        guid: b4d15d00e72d4e458bbc10094dc04585
+        id: 655265632
+        PathAndIcons:
+        - ElementName: ALIVE
+          ObjectType: 8
+      - name: DEATH
+        guid: db4f4bb95873254393deb915e08bb3ca
+        id: 779278001
+        PathAndIcons:
+        - ElementName: DEATH
+          ObjectType: 8
+      - name: None
+        guid: c4d84e74669ee646924b47123d155b0c
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+  SwitchWwu:
+  - PhysicalPath: Switches/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 408fab834f16f44b8658ef5b18d2c0ff
+    m_lastTime: -8586530176514775808
+    List:
+    - name: FOODGOODBAD
+      guid: 5c39017ac361ff4db68b934d9fde93af
+      id: 305217939
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FOODGOODBAD
+        ObjectType: 11
+      Path: Default Work Unit/FOODGOODBAD
+      values:
+      - name: BAD
+        guid: b8e365aadac2904a81214a2f83688da0
+        id: 513390134
+        PathAndIcons:
+        - ElementName: BAD
+          ObjectType: 10
+      - name: GOOD
+        guid: 49225016aa67d9479f98367604831cd1
+        id: 668632890
+        PathAndIcons:
+        - ElementName: GOOD
+          ObjectType: 10
+  TriggerWwu:
+  - PhysicalPath: Triggers/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 68714925bf50864287233c7f60e14a98
+    m_lastTime: -8586531442924775808
+    List: []
+  ExpandedItems:
+  - /MTL_GAMEJAM_2019
+  - /MTL_GAMEJAM_2019/Events
+  - /MTL_GAMEJAM_2019/Events/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
