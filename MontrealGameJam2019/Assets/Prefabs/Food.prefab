@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 1302786405125739370}
   - component: {fileID: 1302786405125739373}
   - component: {fileID: 1302786405125739372}
-  - component: {fileID: 1302786405125739383}
   - component: {fileID: 1302786405125739382}
   m_Layer: 0
   m_Name: Food
@@ -154,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDist: 15
+  handPosition: {fileID: 0}
   fillPerFood: 3
 --- !u!65 &1302786405125739372
 BoxCollider:
@@ -168,25 +168,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 3, z: 0}
---- !u!95 &1302786405125739383
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302786405125739375}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!122 &1302786405125739382
 Halo:
   m_ObjectHideFlags: 0

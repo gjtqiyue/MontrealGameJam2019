@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Collectable : MonoBehaviour
 {
     public float textDist = 15;
+    public Transform handPosition;
 
     private CharacterScript player;
     private InteractText text;
@@ -46,8 +47,16 @@ public abstract class Collectable : MonoBehaviour
             Debug.Log("pick item");
             GetCollected(player);
             player.TriggerPickUpAnimation();
-            this.gameObject.SetActive(false);
+            StartCoroutine(GetPicked());
         }
+    }
+
+    IEnumerator GetPicked()
+    {
+        yield return new WaitForSeconds(2f);
+        transform.position = handPosition.position;
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
     }
 
     // it will be overrided by different type of object

@@ -8,11 +8,15 @@ public class FPController : MonoBehaviour
     public float sensitivity = 1.0f;
     public GameObject cam;
     public Animator anim;
+    public Animator camAnim;
 
     float moveHorizontal;
     float moveVertical;
     float rotX;
     float rotY;
+    bool turnLock;
+    bool cameraSwitch = false;
+    Quaternion curRotation;
 
     public bool PlayerMovementEnabled = false;         // the player is only able to move when the attribute is set to true
 
@@ -27,6 +31,8 @@ public class FPController : MonoBehaviour
     {
         if (PlayerMovementEnabled)
         {
+            //set the animator
+            anim.SetBool("PlayerControlling", true);
             moveHorizontal = Input.GetAxis("Horizontal");
             moveVertical = Input.GetAxis("Vertical");
             anim.SetFloat("MovementSpeed", moveVertical);
@@ -36,7 +42,11 @@ public class FPController : MonoBehaviour
 
             rotX = Input.GetAxis("HorizontalTurn");
             rotY = Input.GetAxis("VerticalTurn");
-            //if (rotX < 0.001 && rotX > -0.001) rotX = 0;
+            if (rotX < 0.001 && rotX > -0.01 && !turnLock)
+            {
+                rotX = 0;
+                transform.rotation = curRotation;
+            }
 
             float angle = rotY * sensitivity * Time.deltaTime;
             float preditAngle = cam.transform.rotation.eulerAngles.x + angle;
@@ -47,20 +57,25 @@ public class FPController : MonoBehaviour
 
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, h, 0f)), Mathf.Abs(h) * smoothing * Time.fixedDeltaTime);
             transform.Rotate(0, rotX * sensitivity * Time.fixedDeltaTime, 0);
+            curRotation = transform.rotation;
 
             transform.Translate(moveHorizontal, 0, moveVertical);
 
             if (Input.GetButtonDown("XboxR1"))
             {
                 // fast turning
-                Debug.Log("Turn");
                 StartCoroutine(TurnAnimation());
             }
+        }
+        else
+        {
+            anim.SetBool("PlayerControlling", false);
         }
     }
 
     IEnumerator TurnAnimation()
     {
+        turnLock = true;
         Quaternion target = Quaternion.LookRotation(-transform.forward);
         Debug.Log(Mathf.Abs(Quaternion.Angle(transform.rotation, target)));
         while (Mathf.Abs(Quaternion.Angle(transform.rotation, target)) > 1)
@@ -68,10 +83,22 @@ public class FPController : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.2f);
             yield return new WaitForFixedUpdate();
         }
+        turnLock = false;
     }
 
     public void PickUp()
     {
+        SwitchCamera();
+
         anim.SetTrigger("PickUpTrigger");
+        camAnim.SetTrigger("PickUpTrigger");
+    }
+
+    public void SwitchCamera()
+    {
+        // switch main camera to the other one
+        transform.GetChild(0).GetComponent<Camera>().enabled = cameraSwitch;
+        transform.GetChild(1).GetComponent<Camera>().enabled = !cameraSwitch;
+        cameraSwitch = !cameraSwitch;
     }
 }

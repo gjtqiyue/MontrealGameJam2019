@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,14 +9,19 @@ public class CharacterScript : MonoBehaviour
     public Text display;
     public float hungerLimit;
     public float hungerRate = 0.1f;
+	[Header("Initialize to 100 pls")]
     public float hunger;
-    public float memoryLoseRate = 0.5f;
-    public float memoryLoseAmt = 0.1f;
+    public float memoryLoseRate = 0.005f;
+    public float memoryLoseAmt = 5;
     public float memoryLastTime = 20;
     public Dictionary<int, Memory> memories;
     public Queue<int> memCollectionOrder;
+	public event Action<float> OnHungerChanged;
+	public event Action<float> OnMemoryIncreased;
+	public event Action<float> OnMemoryDecreased;
 
-    private FPController fpController;
+
+	private FPController fpController;
     [SerializeField]
     private bool PlayerEffectEnabled;              // the effect will work when player is controlling
 
@@ -31,21 +37,15 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        display.text = "Memory number: " + memCollectionOrder.Peek() + "\n"
-                     + "Time left: " + memories[memCollectionOrder.Peek()].GetLeftTime() + "\n"
-                     + "Hunger: " + hunger + "\n" + Time.time;
+        display.text = "Hunger: " + hunger + "\n" + Time.time;
 
         if (PlayerEffectEnabled)
             CheckMemory();
 
         // game over
-        if (hunger <= 0)
+        if (hunger <= 0 || memCollectionOrder.Count == 0)
         {
-
-        }
-        if (memCollectionOrder.Count == 0)
-        {
-
+			GameFlowManager.Instance.PlayerDead();
         }
     }
 
@@ -57,19 +57,23 @@ public class CharacterScript : MonoBehaviour
         // add the memory to the queque and the map
         ReceiveMemory(0);
 
-        StartCoroutine(DecreaseMemory());
+		// start with half hunger
+		hunger -= hungerLimit / 2;
+		OnHungerChanged.Invoke(-0.5f);
+
+		StartCoroutine(DecreaseMemory());
         StartCoroutine(DecreaseHunger());
     }
 
     // check the top of the queue see if the memory is already lost
     public void CheckMemory()
     {
-        if (memCollectionOrder == null) return;
+        if (memCollectionOrder == null || memCollectionOrder.Count <= 0) return;
 
         int num = memCollectionOrder.Peek();
         if (memories[num].IsLost())
         {
-            LoseMemory();
+			LoseMemory();
         }
     }
 
@@ -85,6 +89,7 @@ public class CharacterScript : MonoBehaviour
         {
             memories.Add(num, new Memory(memoryLastTime));
         }
+		OnMemoryIncreased(1);
         Debug.Log("receive memory " + num);
         if(memCollectionOrder.Count > 0) memories[memCollectionOrder.Peek()].Recover();
         memCollectionOrder.Enqueue(num);
@@ -97,8 +102,8 @@ public class CharacterScript : MonoBehaviour
         {
             int num = memCollectionOrder.Dequeue();
             memories[num] = null;
-        }
-        else
+			OnMemoryDecreased(1);
+		} else
         {
             Debug.Log("No more memory to lose");
         }
@@ -109,11 +114,16 @@ public class CharacterScript : MonoBehaviour
         while (Time.time < 360)
         {
             // if the player is controlling the game
-            if (PlayerEffectEnabled)
+            if (PlayerEffectEnabled && memCollectionOrder.Count>0)
             {
-                int num = memCollectionOrder.Peek();
-                memories[num].Lose(memoryLoseAmt);
-                yield return new WaitForSeconds(memoryLoseRate);
+				if(memCollectionOrder.Count > 0) {
+					int num = memCollectionOrder.Peek();
+					memories[num].Lose(memoryLoseAmt);
+					OnMemoryDecreased(memoryLoseAmt / memories[num].GetMaxTime());
+					yield return new WaitForSeconds(memoryLoseRate);
+				} else {
+					yield break;
+				}
             }
             else
             {
@@ -131,7 +141,8 @@ public class CharacterScript : MonoBehaviour
             if (PlayerEffectEnabled)
             {
                 hunger -= hungerRate;
-                yield return new WaitForSeconds(2);
+				OnHungerChanged.Invoke(-hungerRate / hungerLimit);
+				yield return new WaitForSeconds(2);
             }
             else
             {
@@ -147,12 +158,14 @@ public class CharacterScript : MonoBehaviour
             case 0:
                 // food is ok
                 hunger += fill;
+				OnHungerChanged.Invoke(fill / hungerLimit);
                 Debug.Log("ok food");
                 break;
             case 1:
                 // food is infected
                 hunger += fill;
-                Debug.Log("bad food");
+				OnHungerChanged.Invoke(fill / hungerLimit);
+				Debug.Log("bad food");
                 LoseMemory();
                 break;
             default:
