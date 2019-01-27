@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_FOOD_PICKUP = 3701980593U;
         static const AkUniqueID PLAY_GJ_UI_SELECT_BUTTON = 1352814712U;
         static const AkUniqueID PLAY_GRAVE_OPENING = 1403698928U;
+        static const AkUniqueID PLAY_GRAVEYARD_AMBIANCE_NIGHT = 1123583895U;
         static const AkUniqueID PLAY_GRAVEYARD_AMBIANCE_TIMEOFDAY = 1160194499U;
         static const AkUniqueID PLAY_MEMORY_PICKUP = 434982298U;
         static const AkUniqueID PLAY_PLAYER_DEATH_ALIVE = 2110825224U;
@@ -62,6 +63,7 @@ namespace AK
         static const AkUniqueID HEALTH = 3677180323U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID RPM = 796049864U;
+        static const AkUniqueID SIDE_CHAIN_PICKUP = 1651955069U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;
@@ -88,6 +90,7 @@ namespace AK
         static const AkUniqueID MOTION_FACTORY_BUS = 985987111U;
         static const AkUniqueID OBJECTS = 1695690031U;
         static const AkUniqueID PLAYER = 1069431850U;
+        static const AkUniqueID SIDECHAIN = 1883033791U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

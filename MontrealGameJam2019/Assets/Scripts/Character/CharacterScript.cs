@@ -19,6 +19,7 @@ public class CharacterScript : MonoBehaviour
 	public event Action<float> OnHungerChanged;
 	public event Action<float> OnMemoryIncreased;
 	public event Action<float> OnMemoryDecreased;
+    public AK.Wwise.Event MemoryEvent;
 
 
 	private FPController fpController;
@@ -177,4 +178,11 @@ public class CharacterScript : MonoBehaviour
     {
         fpController.PickUp();
     }
+
+    public void MemorySound()
+    {
+
+    }
+
+
 }
