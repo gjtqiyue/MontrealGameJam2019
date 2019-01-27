@@ -43,8 +43,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.3
+  m_Color: {r: 0.9056604, g: 0.8563763, b: 0.72196513, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -155,7 +155,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   fogScale: 1
   dayAtmosphereThickness: 0.4
-  nightAtmosphereThickness: 0.87
+  nightAtmosphereThickness: 0.4
   dayRotateSpeed: {x: -2, y: 0, z: 0}
   nightRotateSpeed: {x: -2, y: 0, z: 0}
   nightDaySwitch: 0
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44387afc5ab7e491b83baec598a9a50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars: {fileID: 4256558208433477048, guid: 396ab043061717f4e9b118321ccae826, type: 3}
+  stars: {fileID: 0}

@@ -39,8 +39,6 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        display.text = "Hunger: " + hunger + "\n" + Time.time;
-
         if (PlayerEffectEnabled)
         {
             CheckMemory();

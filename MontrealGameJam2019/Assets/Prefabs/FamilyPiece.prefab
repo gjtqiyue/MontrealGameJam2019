@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2002274658919911905}
   - component: {fileID: 2002274658919911910}
   - component: {fileID: 2002274658919911919}
-  - component: {fileID: 2002274658919911904}
   - component: {fileID: 3783355555387528451}
+  - component: {fileID: 5376780196929734132}
   m_Layer: 0
   m_Name: FamilyPiece
   m_TagString: Untagged
@@ -112,6 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDist: 15
   handPosition: {fileID: 0}
+  Memory:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 0}
   pieceNum: 1
 --- !u!65 &2002274658919911910
 BoxCollider:
@@ -138,24 +141,6 @@ Halo:
     serializedVersion: 2
     rgba: 4294952960
   m_Size: 1
---- !u!114 &4420292580318288031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002274658919911911}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d533996704ee304996771918067f538, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &3783355555387528451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -172,6 +157,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &5376780196929734132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002274658919911911}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d533996704ee304996771918067f538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2002274659806947221
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +440,6 @@ GameObject:
   - component: {fileID: 2373654501621894703}
   - component: {fileID: 2373654501621894696}
   - component: {fileID: 2373654501621894691}
-  - component: {fileID: 2373654501621894700}
   m_Layer: 9
   m_Name: FamilyPiece (1)
   m_TagString: Minimap
@@ -515,22 +518,3 @@ Halo:
     serializedVersion: 2
     rgba: 4278255608
   m_Size: 1
---- !u!95 &2373654501621894700
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2373654501621894699}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d533996704ee304996771918067f538, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
