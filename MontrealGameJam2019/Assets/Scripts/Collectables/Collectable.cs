@@ -57,6 +57,8 @@ public abstract class Collectable : MonoBehaviour
         transform.position = handPosition.position;
         yield return new WaitForSeconds(2);
         gameObject.SetActive(false);
+		Destroy(gameObject);
+		GameFlowManager.Instance.IncreaseLevel();
     }
 
     // it will be overrided by different type of object

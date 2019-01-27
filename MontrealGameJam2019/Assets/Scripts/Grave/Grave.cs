@@ -34,7 +34,6 @@ public class Grave : MonoBehaviour
             if (other.tag == "Player")
             {
                 t.gameObject.SetActive(true);
-                t.gameObject.GetComponent<TextMesh>().text = "Family Grave of Cockburn";
                 trig = true;
             }
         }

@@ -20,4 +20,7 @@ public class LevelData
 
 	[SerializeField]
 	public float hunger;
+
+	[SerializeField]
+	public GameObject memoryPrefab;
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coffin
   - Coffin_Door
+  - Minimap
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Minimap
   - 
   - 
   - 

@@ -120,7 +120,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	public bool IncreaseLevel() {
 		if (gameState != GameState.InGame) return false;
-		if (currentLevel.id >= levelDatas.LevelDatas.Count) return FoundGrave();
+		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count) return FoundGrave();
 
 		ChangeLevel(currentLevel.id + 1);
 		return true;
@@ -143,7 +143,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 		if(level < 0 || level >= levelDatas.LevelDatas.Count) {
 			Debug.LogError("Calling unreachable Level");
 		} else {
-			currentLevel = levelDatas.LevelDatas[currentLevel.id - 1];
+			currentLevel = levelDatas.LevelDatas[level];
 			safeInvoke(OnLevelRefresh);
 		}
 	}
@@ -186,6 +186,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
         // disable the player camera
         player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
 
+		mainCamera.gameObject.SetActive(true);
         // play the time line
         endingTimeline.Play();
 

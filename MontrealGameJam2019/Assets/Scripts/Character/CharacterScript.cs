@@ -33,6 +33,7 @@ public class CharacterScript : MonoBehaviour
         memCollectionOrder = new Queue<int>();
         fpController = GetComponent<FPController>();
         InitializeOnStart();
+		GameFlowManager.Instance.OnLevelRefresh += refreshHunger;
     }
 
     // Update is called once per frame
@@ -63,7 +64,9 @@ public class CharacterScript : MonoBehaviour
 
 		// start with half hunger
 		hunger -= hungerLimit / 2;
-		OnHungerChanged.Invoke(-0.5f);
+		if(OnHungerChanged != null) {
+			OnHungerChanged.Invoke(-0.5f);
+		}
 
 		StartCoroutine(DecreaseMemory());
         StartCoroutine(DecreaseHunger());
@@ -75,7 +78,7 @@ public class CharacterScript : MonoBehaviour
         if (memCollectionOrder == null || memCollectionOrder.Count <= 0) return;
 
         int num = memCollectionOrder.Peek();
-        if (memories[num].IsLost())
+        if (memories[num] != null && memories[num].IsLost())
         {
 			LoseMemory();
         }
@@ -93,6 +96,7 @@ public class CharacterScript : MonoBehaviour
     // when receive the memory, we add the memory to the map and update the queue
     public void ReceiveMemory(int num)
     {
+		
         // if the number already exist it means that the player obtained this memory before
         if (memories.ContainsKey(num))
         {
@@ -102,11 +106,27 @@ public class CharacterScript : MonoBehaviour
         {
             memories.Add(num, new Memory(memoryLastTime));
         }
-		OnMemoryIncreased(1);
-        Debug.Log("receive memory " + num);
+
+		if(OnMemoryDecreased != null) {
+			OnMemoryIncreased(1);
+		}
+		Debug.Log("receive memory " + num);
         if(memCollectionOrder.Count > 0) memories[memCollectionOrder.Peek()].Recover();
         memCollectionOrder.Enqueue(num);
+
+		// show the photo to the player
+		StartCoroutine(ShowPhoto(num));
     }
+
+	IEnumerator ShowPhoto(int num) {
+		GameObject obj = FamilyPieceManager.Instance.GetPhotoPiece(num);
+		Transform mainCam = transform.GetChild(0);
+
+		GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
+		photo.transform.localRotation = Quaternion.Euler(90,180,0);
+		yield return new WaitForSeconds(5);
+		Destroy(photo);
+	}
 
     // get rid of one memory completely
     public void LoseMemory()
@@ -115,7 +135,8 @@ public class CharacterScript : MonoBehaviour
         {
             int num = memCollectionOrder.Dequeue();
             memories[num] = null;
-			OnMemoryDecreased(1);
+
+			OnMemoryDecreased.Invoke(1);
 		} else
         {
             Debug.Log("No more memory to lose");
@@ -132,7 +153,9 @@ public class CharacterScript : MonoBehaviour
 				if(memCollectionOrder.Count > 0) {
 					int num = memCollectionOrder.Peek();
 					memories[num].Lose(memoryLoseAmt);
-					OnMemoryDecreased(memoryLoseAmt / memories[num].GetMaxTime());
+					if(OnMemoryDecreased != null) {
+						OnMemoryDecreased.Invoke(memoryLoseAmt / memories[num].GetMaxTime());
+					}
 					yield return new WaitForSeconds(memoryLoseRate);
 				} else {
 					yield break;
@@ -146,6 +169,15 @@ public class CharacterScript : MonoBehaviour
         Debug.Log("end coroutine");
     }
 
+	public void refreshHunger(LevelData data) {
+		if(data.hunger > 100) {
+			return;
+		}
+		float hungerChange = data.hunger - hunger;
+		hunger = data.hunger;
+		OnHungerChanged.Invoke(hungerChange/hungerLimit);
+	}
+
     // Hunger part
     IEnumerator DecreaseHunger()
     {
@@ -154,7 +186,9 @@ public class CharacterScript : MonoBehaviour
             if (PlayerEffectEnabled)
             {
                 hunger -= hungerRate;
-				OnHungerChanged.Invoke(-hungerRate / hungerLimit);
+				if(OnHungerChanged != null) {
+					OnHungerChanged.Invoke(-hungerRate / hungerLimit);
+				}
 				yield return new WaitForSeconds(2);
             }
             else

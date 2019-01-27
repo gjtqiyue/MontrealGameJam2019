@@ -19,6 +19,9 @@ public class InGameUI : MonoBehaviour
 	private Image hungerIndicator;
 
 	[SerializeField]
+	private GameObject minimap;
+
+	[SerializeField]
 	private GameObject hungerPrefab;
 
 	public bool IsUIShown = false;
@@ -42,6 +45,7 @@ public class InGameUI : MonoBehaviour
 
 	public void ActivateUI() {
 		hungerPrefab.SetActive(true);
+		minimap.SetActive(true);
 		foreach(Image i in memories) {
 			i.gameObject.SetActive(true);
 		}
@@ -75,7 +79,7 @@ public class InGameUI : MonoBehaviour
 
 
 		if(memory.color.a > amount) {
-			memory.color = new Color(memory.color.r, memory.color.g, memory.color.b, memory.color.a-amount);
+			memory.color = new Color(255, 255, 255, memory.color.a-amount);
 		} else {
 			memories.Dequeue();
 			Destroy(memory.gameObject);
