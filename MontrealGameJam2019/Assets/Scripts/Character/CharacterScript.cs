@@ -40,7 +40,10 @@ public class CharacterScript : MonoBehaviour
         display.text = "Hunger: " + hunger + "\n" + Time.time;
 
         if (PlayerEffectEnabled)
+        {
             CheckMemory();
+            CheckHunger();
+        }
 
         // game over
         if (hunger <= 0 || memCollectionOrder.Count == 0)
@@ -74,6 +77,15 @@ public class CharacterScript : MonoBehaviour
         if (memories[num].IsLost())
         {
 			LoseMemory();
+        }
+    }
+
+    public void CheckHunger()
+    {
+        if (hunger < 20)
+        {
+            // warn the player to find some food
+            GameFlowManager.Instance.HungerWarning();
         }
     }
 

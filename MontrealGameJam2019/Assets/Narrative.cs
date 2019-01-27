@@ -26,4 +26,16 @@ public class Narrative : MonoBehaviour
         t.text = sentence;
         anim.Play("FadeIn");
     }
+
+    public void HungerWarning()
+    {
+        StartCoroutine(WarningText());
+    }
+
+    IEnumerator WarningText()
+    {
+        t.text = "I feel hungury...... I need something to eat";
+        anim.Play("FadeIn");
+        yield return new WaitForSeconds(2);
+    }
 }

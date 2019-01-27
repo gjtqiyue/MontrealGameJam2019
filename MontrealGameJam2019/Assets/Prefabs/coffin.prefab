@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625095201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.854, z: 1.07}
+  m_LocalRotation: {x: -0.6896968, y: -0.000000014908288, z: 0.00000008940697, w: 0.7240983}
+  m_LocalPosition: {x: 0, y: -3.62, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2614451391589593806}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -87.212006, y: 0, z: 0}
 --- !u!108 &1625095203
 Light:
   m_ObjectHideFlags: 0
@@ -40,11 +40,11 @@ Light:
   m_GameObject: {fileID: 1625095201}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.21787111, g: 0.3547916, b: 0.9056604, a: 1}
-  m_Intensity: 10.6
-  m_Range: 3.3
-  m_SpotAngle: 30
+  m_Type: 0
+  m_Color: {r: 0.2753649, g: 0.6415094, b: 0.41609398, a: 1}
+  m_Intensity: 3.2
+  m_Range: 30
+  m_SpotAngle: 42.1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 6043032868556806720}
   - component: {fileID: 1140562027693796201}
   m_Layer: 0
-  m_Name: coffin 1
+  m_Name: coffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

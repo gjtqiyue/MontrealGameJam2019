@@ -78,7 +78,7 @@ public class FPController : MonoBehaviour
         while (Mathf.Abs(Quaternion.Angle(transform.rotation, target)) > 1)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.2f);
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
         turnLock = false;
     }

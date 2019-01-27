@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+public enum GameState
+{
+    StartMenu,
+    InGame,
+    FoundGrave,
+    BeatGame,
+    Dead
+}
+
 public class GameFlowManager : ManagerBase<GameFlowManager>
 {
-	public enum GameState {
-		StartMenu,
-		InGame,
-		BeatGame,
-		Dead
-	}
 
 	[SerializeField]
 	private SerializeLevelDataList levelDatas;
@@ -25,7 +28,10 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	[SerializeField]
 	private PlayableDirector titleTimeline;
 
-	private GameState gameState = GameState.StartMenu;
+    [SerializeField]
+    private PlayableDirector endingTimeline;
+
+    private GameState gameState = GameState.StartMenu;
 
 	private LevelData currentLevel;
 
@@ -38,6 +44,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	public event Action<LevelData> OnWin;
 
 	public void Start() {
+        endingTimeline.Stop();
 		titleTimeline.Stop();
         storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
     }
@@ -62,7 +69,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 		currentLevel = levelDatas.LevelDatas[0];
 		gameState = GameState.InGame;
 
-        storyTeller.OnNarrativeSpeak("Where am I...... \n and.... who am I.......");
+        storyTeller.OnNarrativeSpeak("Where am I...... \n and....\n who am I.......");
 
         // trigger the cuffin to open the door
         player.GetComponent<enableWakeup>().OpenCoffin();
@@ -113,7 +120,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	public bool IncreaseLevel() {
 		if (gameState != GameState.InGame) return false;
-		if (currentLevel.id >= levelDatas.LevelDatas.Count) return Win();
+		if (currentLevel.id >= levelDatas.LevelDatas.Count) return FoundGrave();
 
 		ChangeLevel(currentLevel.id + 1);
 		return true;
@@ -144,7 +151,10 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	private bool Win() {
 		if (gameState != GameState.InGame) return false;
 
-		gameState = GameState.BeatGame;
+        OpenEyeEffect eye = UIManager.Instance.gameObject.GetComponentInChildren<OpenEyeEffect>();
+        if (eye != null) eye.Close();
+
+        gameState = GameState.BeatGame;
 		safeInvoke(OnWin);
 		return true;
 	}
@@ -154,4 +164,46 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 			a.Invoke(currentLevel);
 		}
 	}
+
+    private bool FoundGrave()
+    {
+        gameState = GameState.FoundGrave;
+
+        storyTeller.OnNarrativeSpeak("Now I remember...\n my family, \n myself, and ... \n my home.");
+
+        return true;
+    }
+
+    public void HungerWarning()
+    {
+        storyTeller.HungerWarning();
+    }
+
+    public void TriggerEndingCutScene()
+    {
+        endingTimeline.GetComponent<EndGameCutSceneScript>().InitializePosition();
+
+        // disable the player camera
+        player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
+
+        // play the time line
+        endingTimeline.Play();
+
+        // set the sun to turn
+        // TODO: fine the directional light and trigger the daynightswitch
+
+        StartCoroutine(WaitForEnd());
+    }
+
+    IEnumerator WaitForEnd()
+    {
+        yield return new WaitForSeconds(10);
+
+        Win();
+    }
+
+    public GameState GetCurrentGameState()
+    {
+        return gameState;
+    }
 }

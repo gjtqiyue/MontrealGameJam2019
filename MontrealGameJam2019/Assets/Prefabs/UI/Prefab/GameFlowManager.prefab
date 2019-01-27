@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelDatas: {fileID: 11400000, guid: 64398e42e89a16b4fa492e8f74ebd997, type: 2}
-  player: {fileID: 25302751223309747, guid: 22541442f8f09044b8d66283f4dbccf5, type: 3}
+  player: {fileID: 0}
   mainCamera: {fileID: 0}
-  titleTimeline: {fileID: 8148503889175632845, guid: c938c176f53b8664fbd619068f36041b,
-    type: 3}
+  titleTimeline: {fileID: 0}
+  endingTimeline: {fileID: 0}
