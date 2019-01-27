@@ -349,8 +349,6 @@ GameObject:
   - component: {fileID: 25302751712565441}
   - component: {fileID: 25302751712565442}
   - component: {fileID: 25302751712565440}
-  - component: {fileID: 44642600}
-  - component: {fileID: 4355169486186134744}
   m_Layer: 0
   m_Name: FPCamera
   m_TagString: MainCamera
@@ -435,40 +433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectMaterial: {fileID: 2100000, guid: 9336f72e3f0097b4d82221d175d61fcc, type: 2}
---- !u!114 &44642600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25302751712565444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: eb4a66d47076c3d4591e57d85c13e2d7, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!114 &4355169486186134744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25302751712565444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: eb4a66d47076c3d4591e57d85c13e2d7, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1001 &25302750439686835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,10 +440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 25302751223309709}
     m_Modifications:
-    - target: {fileID: 9500000, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b62e842526b1aeb449fafbd96cf5e58e, type: 2}
+    - target: {fileID: 100012, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
+      propertyPath: m_Name
+      value: malcolm
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -524,10 +488,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100012, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
-      propertyPath: m_Name
-      value: malcolm
-      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b62e842526b1aeb449fafbd96cf5e58e, type: 2}
     - target: {fileID: 13700002, guid: 40818b1eaed40354ab19cda9d2584077, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
