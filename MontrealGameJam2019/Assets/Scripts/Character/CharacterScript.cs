@@ -64,12 +64,13 @@ public class CharacterScript : MonoBehaviour
     // check the top of the queue see if the memory is already lost
     public void CheckMemory()
     {
-        if (memCollectionOrder == null) return;
-
-        int num = memCollectionOrder.Peek();
-        if (memories[num].IsLost())
+        if (memCollectionOrder != null && memCollectionOrder.Count > 0)
         {
-            LoseMemory();
+            int num = memCollectionOrder.Peek();
+            if (memories[num].IsLost())
+            {
+                LoseMemory();
+            }
         }
     }
 
@@ -109,7 +110,7 @@ public class CharacterScript : MonoBehaviour
         while (Time.time < 360)
         {
             // if the player is controlling the game
-            if (PlayerEffectEnabled)
+            if (PlayerEffectEnabled && memCollectionOrder.Count>0)
             {
                 int num = memCollectionOrder.Peek();
                 memories[num].Lose(memoryLoseAmt);
