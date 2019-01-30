@@ -123,7 +123,7 @@ public class CharacterScript : MonoBehaviour
 		GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
 		photo.transform.localRotation = Quaternion.Euler(90,180,0);
 		yield return new WaitForSeconds(5);
-		Destroy(photo);
+		Destroy(photo.gameObject);
 	}
 
     // get rid of one memory completely

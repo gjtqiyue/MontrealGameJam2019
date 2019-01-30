@@ -43,10 +43,9 @@ public class FPController : MonoBehaviour
 
             rotX = Input.GetAxis("HorizontalTurn");
             rotY = Input.GetAxis("VerticalTurn");
-            if (rotX < 0.001 && rotX > -0.01 && !turnLock)
+            if (rotX < 0.01 && rotX > -0.01)
             {
                 rotX = 0;
-                transform.rotation = curRotation;
             }
 
             float angle = rotY * sensitivity * Time.deltaTime;
@@ -58,30 +57,29 @@ public class FPController : MonoBehaviour
 
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, h, 0f)), Mathf.Abs(h) * smoothing * Time.fixedDeltaTime);
             transform.Rotate(0, rotX * sensitivity * Time.fixedDeltaTime, 0);
-            curRotation = transform.rotation;
 
             transform.Translate(moveHorizontal, 0, moveVertical);
 
-            if (Input.GetButtonDown("XboxR1"))
-            {
-                // fast turning
-                StartCoroutine(TurnAnimation());
-            }
+            //if (Input.GetButtonDown("XboxR1"))
+            //{
+            //    // fast turning
+            //    StartCoroutine(TurnAnimation());
+            //}
         }
     }
 
-    IEnumerator TurnAnimation()
-    {
-        turnLock = true;
-        Quaternion target = Quaternion.LookRotation(-transform.forward);
-        Debug.Log(Mathf.Abs(Quaternion.Angle(transform.rotation, target)));
-        while (Mathf.Abs(Quaternion.Angle(transform.rotation, target)) > 1)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.2f);
-            yield return null;
-        }
-        turnLock = false;
-    }
+    //IEnumerator TurnAnimation()
+    //{
+    //    turnLock = true;
+    //    Quaternion target = Quaternion.LookRotation(-transform.forward);
+    //    Debug.Log(Mathf.Abs(Quaternion.Angle(transform.rotation, target)));
+    //    while (Mathf.Abs(Quaternion.Angle(transform.rotation, target)) > 1)
+    //    {
+    //        transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.2f);
+    //        yield return null;
+    //    }
+    //    turnLock = false;
+    //}
 
     public void PickUp()
     {

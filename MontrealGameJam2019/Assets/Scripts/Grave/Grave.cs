@@ -11,8 +11,12 @@ public class Grave : MonoBehaviour
 
     public InteractText t;
 
-    // Update is called once per frame
-    void Update()
+	private void Start() {
+		t.gameObject.SetActive(false);
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if (GameFlowManager.Instance.GetCurrentGameState() == GameState.FoundGrave)
         {
