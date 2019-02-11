@@ -7,7 +7,7 @@ public class enableWakeup : MonoBehaviour
   public Animator coffinDoorAnim;
   public Animator malcolmAnim;
   public Animator characterAnim;
-    public AK.Wwise.Event GraveDoor;
+    public AK.Wwise.Event GraveOpen;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +28,6 @@ public class enableWakeup : MonoBehaviour
     public void OpenCoffin()
     {
         coffinDoorAnim.SetTrigger("CoffinDoorOpen");
-        GraveDoor.Post(gameObject);
+        GraveOpen.Post(gameObject);
     }
 }
