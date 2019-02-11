@@ -15,9 +15,13 @@ public enum GameState
 
 public class GameFlowManager : ManagerBase<GameFlowManager>
 {
+    public bool testButton = false;
 
 	[SerializeField]
 	private SerializeLevelDataList levelDatas;
+
+    [SerializeField]
+    private AutoIntensity nightDaySwitchScript;
 
 	[SerializeField]
 	private GameObject player;
@@ -44,12 +48,17 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	public event Action<LevelData> OnWin;
 
 	public void Start() {
-        endingTimeline.Stop();
+        endingTimeline.enabled = false;
 		titleTimeline.Stop();
-        storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
     }
 
-	public IEnumerator StartGame() {
+    private void Update()
+    {
+        if (testButton)
+            TriggerEndingCutScene();
+    }
+
+    public IEnumerator StartGame() {
 		if (gameState != GameState.StartMenu) yield break;
 		titleTimeline.Play();
 
@@ -68,6 +77,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 		titleTimeline.time = 0;
 		currentLevel = levelDatas.LevelDatas[0];
 		gameState = GameState.InGame;
+        storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
 
         storyTeller.OnNarrativeSpeak("Where am I...... \n and....\n who am I.......");
 
@@ -176,7 +186,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     public void HungerWarning()
     {
-        storyTeller.HungerWarning();
+        if (gameState == GameState.InGame) storyTeller.HungerWarning();
     }
 
     public void TriggerEndingCutScene()
@@ -186,12 +196,21 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
         // disable the player camera
         player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
 
-		mainCamera.gameObject.SetActive(true);
+        titleTimeline.gameObject.SetActive(false);
+        mainCamera.gameObject.SetActive(true);
+
+        endingTimeline.time = 0;
+
+        // disable all the UI element
+        UIManager.Instance.EndGame();
+
         // play the time line
         endingTimeline.Play();
+        Debug.Log("play");
 
         // set the sun to turn
-        // TODO: fine the directional light and trigger the daynightswitch
+        // find the directional light and trigger the daynightswitch
+        nightDaySwitchScript.nightDaySwitch = true;
 
         StartCoroutine(WaitForEnd());
     }

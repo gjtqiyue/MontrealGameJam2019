@@ -11,8 +11,7 @@ public class FamilyPiece : Collectable
         // call the method to add memory
         Debug.Log("Get memory");
         if (player != null) player.ReceiveMemory(pieceNum);
-        Memory.Post(gameObject);
-             
-             }
+        Memory.Post(gameObject);         
+    }
 }
 

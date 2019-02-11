@@ -36,6 +36,6 @@ public class Narrative : MonoBehaviour
     {
         t.text = "I feel hungury...... I need something to eat";
         anim.Play("FadeIn");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(10);
     }
 }

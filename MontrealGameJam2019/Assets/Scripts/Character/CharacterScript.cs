@@ -84,7 +84,7 @@ public class CharacterScript : MonoBehaviour
 
     public void CheckHunger()
     {
-        if (hunger < 20)
+        if (hunger == 15)
         {
             // warn the player to find some food
             GameFlowManager.Instance.HungerWarning();
@@ -119,10 +119,10 @@ public class CharacterScript : MonoBehaviour
 	IEnumerator ShowPhoto(int num) {
 		GameObject obj = FamilyPieceManager.Instance.GetPhotoPiece(num);
 		Transform mainCam = transform.GetChild(0);
-
-		GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
+        yield return new WaitForSeconds(3);
+        GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
 		photo.transform.localRotation = Quaternion.Euler(90,180,0);
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(7);
 		Destroy(photo.gameObject);
 	}
 
@@ -137,7 +137,7 @@ public class CharacterScript : MonoBehaviour
 			OnMemoryDecreased.Invoke(1);
 		} else
         {
-            Debug.Log("No more memory to lose");
+            GameFlowManager.Instance.PlayerDead();
         }
     }
 
@@ -191,7 +191,7 @@ public class CharacterScript : MonoBehaviour
             }
             else
             {
-                yield return new WaitForEndOfFrame();
+                yield return null;
             }
         }
         Debug.Log("end coroutine");

@@ -15,25 +15,7 @@ MonoBehaviour:
   LevelDatas:
   - name: Level1
     id: 0
-    numberOfFood: 0
+    numberOfFood: 10
     totalTimer: 20
     hunger: 50
-    memoryPrefab: {fileID: 0}
-  - name: Level1
-    id: 1
-    numberOfFood: 10
-    totalTimer: 15
-    hunger: 40
-    memoryPrefab: {fileID: 0}
-  - name: Level1
-    id: 2
-    numberOfFood: 10
-    totalTimer: 10
-    hunger: 44
-    memoryPrefab: {fileID: 0}
-  - name: Level1
-    id: 3
-    numberOfFood: 10
-    totalTimer: 5
-    hunger: 38
     memoryPrefab: {fileID: 0}

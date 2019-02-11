@@ -44,7 +44,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 686d4f43a457c1a469d2565154f1a17a, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -138,14 +138,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1953748363412090274, guid: 9a8e8ac9ad169414d89e540c1e58dcc5,
         type: 3}
-      propertyPath: m_LookAt
+      propertyPath: m_ComponentOwner
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1953748363412090274, guid: 9a8e8ac9ad169414d89e540c1e58dcc5,
-        type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 648640273383731614}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8e8ac9ad169414d89e540c1e58dcc5, type: 3}
 --- !u!4 &648640272002721616 stripped
@@ -166,6 +161,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &648640273383731614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1953748361842342765, guid: 9a8e8ac9ad169414d89e540c1e58dcc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305328303041776371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9187066871406702559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,6 +234,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8538660244135969573, guid: 9e1bc6969f898d54788baecdfa506a0c,
+        type: 3}
+      propertyPath: m_ComponentOwner
+      value: 
+      objectReference: {fileID: 648640272285125463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1bc6969f898d54788baecdfa506a0c, type: 3}
 --- !u!4 &648640273492815093 stripped
@@ -253,3 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &648640272285125463 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8538660245611078792, guid: 9e1bc6969f898d54788baecdfa506a0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9187066871406702559}
+  m_PrefabAsset: {fileID: 0}

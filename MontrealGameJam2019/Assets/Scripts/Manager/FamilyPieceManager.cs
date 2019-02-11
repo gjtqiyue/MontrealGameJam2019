@@ -23,6 +23,9 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 	[SerializeField]
 	private Transform hand;
 
+    [SerializeField]
+    private Transform familyGrave;
+
 	[SerializeField]
 	private List<GameObject> familyPhotos;
 
@@ -60,24 +63,43 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 			minimapIcons.RemoveAt(i);
 		}
 
-		Transform thisSpot = spawnSpots[numberGenerator.Next(0, spawnSpots.Count)];
-		while(thisSpot.position.Equals(currentPieceTranform.position)) {
-			thisSpot = spawnSpots[numberGenerator.Next(0, spawnSpots.Count)];
-		}
-		CreateNewPiece(piecePrefab, thisSpot);
-		CreateNewFood(data.numberOfFood);
+        if (GameFlowManager.Instance.GetCurrentGameState() == GameState.FoundGrave)
+        {
+            // set the grave as the final destination 
+            Transform thisSpot = familyGrave;
+            CreateNewPiece(null, thisSpot);
+            CreateNewFood(data.numberOfFood);
+        }
+        else
+        {
+            Transform thisSpot = spawnSpots[numberGenerator.Next(0, spawnSpots.Count)];
+
+            while (thisSpot.position.Equals(currentPieceTranform.position))
+            {
+                thisSpot = spawnSpots[numberGenerator.Next(0, spawnSpots.Count)];
+            }
+            CreateNewPiece(piecePrefab, thisSpot);
+            CreateNewFood(data.numberOfFood);
+        }
 	}
 
 	public GameObject GetPhotoPiece(int num) {
-		return familyPhotos[num];
+		return Instantiate(familyPhotos[num]);
 	}
 
 	private void CreateNewPiece(GameObject prefab, Transform position) {
-		GameObject o = Instantiate(prefab, position);
-		currentPieceTranform = o.transform;
-		Collectable c = o.GetComponent<Collectable>();
-		c.handPosition = hand;
-		c.GetComponentInChildren<InteractText>().target = player.gameObject;
+        if (prefab != null) {
+            GameObject o = Instantiate(prefab, position);
+            currentPieceTranform = o.transform;
+            Collectable c = o.GetComponent<Collectable>();
+            c.handPosition = hand;
+            c.GetComponentInChildren<InteractText>().target = player.gameObject;
+        }
+        else {
+            GameObject o = Instantiate(new GameObject(), position);
+            currentPieceTranform = o.transform;  
+        }
+
 		foreach (Transform childTrans in currentPieceTranform) {
 			if (childTrans.tag == "Minimap") {
 				minimapIcons.Add(childTrans);

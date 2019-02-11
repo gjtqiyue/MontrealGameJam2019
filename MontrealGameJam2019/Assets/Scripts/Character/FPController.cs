@@ -28,7 +28,7 @@ public class FPController : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PlayerMovementEnabled)
         {
@@ -43,7 +43,7 @@ public class FPController : MonoBehaviour
 
             rotX = Input.GetAxis("HorizontalTurn");
             rotY = Input.GetAxis("VerticalTurn");
-            if (rotX < 0.01 && rotX > -0.01)
+            if (rotX < 0.1 && rotX > -0.1)
             {
                 rotX = 0;
             }
@@ -57,7 +57,7 @@ public class FPController : MonoBehaviour
 
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, h, 0f)), Mathf.Abs(h) * smoothing * Time.fixedDeltaTime);
             transform.Rotate(0, rotX * sensitivity * Time.fixedDeltaTime, 0);
-
+            
             transform.Translate(moveHorizontal, 0, moveVertical);
 
             //if (Input.GetButtonDown("XboxR1"))
@@ -95,5 +95,9 @@ public class FPController : MonoBehaviour
         transform.GetChild(0).GetComponent<Camera>().enabled = cameraSwitch;
         transform.GetChild(1).GetComponent<Camera>().enabled = !cameraSwitch;
         cameraSwitch = !cameraSwitch;
+
+        // reset the camera 
+        if (transform.GetChild(0).GetComponent<Camera>().isActiveAndEnabled)
+            transform.GetChild(0).GetComponent<Camera>().transform.LookAt(transform.forward);
     }
 }
