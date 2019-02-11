@@ -49,7 +49,7 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 			spawnSpots.Add(t);
 		}
 		numberGenerator = new System.Random();
-		CreateNewPiece(piecePrefab, spawnSpots[numberGenerator.Next(0, spawnSpots.Count)]);
+		CreateNewPiece(piecePrefab, spawnSpots[numberGenerator.Next(0, spawnSpots.Count)], 1);
 		GameFlowManager.Instance.OnLevelRefresh += SpawnNewMemory;
 	}
 
@@ -65,9 +65,10 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 
         if (GameFlowManager.Instance.GetCurrentGameState() == GameState.FoundGrave)
         {
+            Debug.Log("display grave on the map");
             // set the grave as the final destination 
             Transform thisSpot = familyGrave;
-            CreateNewPiece(null, thisSpot);
+            CreateNewPiece(null, thisSpot, data.id);
             CreateNewFood(data.numberOfFood);
         }
         else
@@ -78,7 +79,7 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
             {
                 thisSpot = spawnSpots[numberGenerator.Next(0, spawnSpots.Count)];
             }
-            CreateNewPiece(piecePrefab, thisSpot);
+            CreateNewPiece(piecePrefab, thisSpot, data.id);
             CreateNewFood(data.numberOfFood);
         }
 	}
@@ -87,17 +88,20 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 		return Instantiate(familyPhotos[num]);
 	}
 
-	private void CreateNewPiece(GameObject prefab, Transform position) {
+	private void CreateNewPiece(GameObject prefab, Transform position, int level) {
         if (prefab != null) {
             GameObject o = Instantiate(prefab, position);
             currentPieceTranform = o.transform;
-            Collectable c = o.GetComponent<Collectable>();
+            FamilyPiece c = o.GetComponent<FamilyPiece>();
             c.handPosition = hand;
             c.GetComponentInChildren<InteractText>().target = player.gameObject;
+
+            // set the piece number
+            Debug.Log("family piece " + level);
+            c.pieceNum = level;
         }
         else {
-            GameObject o = Instantiate(new GameObject(), position);
-            currentPieceTranform = o.transform;  
+            currentPieceTranform = position; 
         }
 
 		foreach (Transform childTrans in currentPieceTranform) {

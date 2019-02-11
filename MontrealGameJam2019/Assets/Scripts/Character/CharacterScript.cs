@@ -108,8 +108,10 @@ public class CharacterScript : MonoBehaviour
 		if(OnMemoryDecreased != null) {
 			OnMemoryIncreased(1);
 		}
+
 		Debug.Log("receive memory " + num);
         if(memCollectionOrder.Count > 0) memories[memCollectionOrder.Peek()].Recover();
+
         memCollectionOrder.Enqueue(num);
 
 		// show the photo to the player
@@ -119,7 +121,7 @@ public class CharacterScript : MonoBehaviour
 	IEnumerator ShowPhoto(int num) {
 		GameObject obj = FamilyPieceManager.Instance.GetPhotoPiece(num);
 		Transform mainCam = transform.GetChild(0);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
 		photo.transform.localRotation = Quaternion.Euler(90,180,0);
 		yield return new WaitForSeconds(7);

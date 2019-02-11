@@ -9,7 +9,6 @@ public class FamilyPiece : Collectable
     public override void GetCollected(CharacterScript player)
     {
         // call the method to add memory
-        Debug.Log("Get memory");
         if (player != null) player.ReceiveMemory(pieceNum);
         Memory.Post(gameObject);         
     }

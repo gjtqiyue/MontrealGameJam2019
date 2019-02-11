@@ -44,7 +44,6 @@ public abstract class Collectable : MonoBehaviour
     {
         if (Input.GetButtonDown("XboxA") && trig)
         {
-            Debug.Log("pick item");
             GetCollected(player);
             player.TriggerPickUpAnimation();
             StartCoroutine(GetPicked());

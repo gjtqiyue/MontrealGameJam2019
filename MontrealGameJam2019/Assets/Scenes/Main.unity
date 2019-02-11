@@ -34449,17 +34449,17 @@ PrefabInstance:
     - target: {fileID: 648640272002721616, guid: 0bdd5cd9d65d7da4da012f1e61b65b93,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07295727
+      value: -0.072957285
       objectReference: {fileID: 0}
     - target: {fileID: 648640272002721616, guid: 0bdd5cd9d65d7da4da012f1e61b65b93,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9065654
+      value: 0.90656537
       objectReference: {fileID: 0}
     - target: {fileID: 648640272002721616, guid: 0bdd5cd9d65d7da4da012f1e61b65b93,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.37684512
+      value: -0.37684515
       objectReference: {fileID: 0}
     - target: {fileID: 648640272002721616, guid: 0bdd5cd9d65d7da4da012f1e61b65b93,
         type: 3}
@@ -46367,22 +46367,52 @@ PrefabInstance:
     - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
         type: 3}
       propertyPath: nightDayColor.key1.r
-      value: 0.8113208
+      value: 0.9622642
       objectReference: {fileID: 0}
     - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
         type: 3}
       propertyPath: nightDayColor.key1.g
-      value: 0.4435306
+      value: 0.3548923
       objectReference: {fileID: 0}
     - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
         type: 3}
       propertyPath: nightDayColor.key1.b
-      value: 0.27171594
+      value: 0.040850822
       objectReference: {fileID: 0}
     - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
         type: 3}
       propertyPath: dayRotateSpeed.x
-      value: -3
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.key2.r
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.key2.g
+      value: 0.8260947
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.key2.b
+      value: 0.80651474
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.ctime1
+      value: 23130
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290170922729728800, guid: a5af8bd23b87546c4bd62ca458894d6d,
+        type: 3}
+      propertyPath: nightDayColor.m_NumColorKeys
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5af8bd23b87546c4bd62ca458894d6d, type: 3}
@@ -78690,6 +78720,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1399347696}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1545134585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545134586}
+  - component: {fileID: 1545134587}
+  m_Layer: 9
+  m_Name: miniIcon
+  m_TagString: Minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545134586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545134585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2614451391840973914}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &1545134587
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545134585}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280617215
+  m_Size: 1
 --- !u!4 &1546775801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2704743755636698054, guid: 7a62e4d4fe6d1044a8037bfdf4bda240,
@@ -110541,6 +110614,7 @@ Transform:
   - {fileID: 63891949}
   - {fileID: 1943091894}
   - {fileID: 4112638841166960672}
+  - {fileID: 1545134586}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 179.99998}
@@ -110776,7 +110850,7 @@ GameObject:
   - component: {fileID: 1613100031}
   m_Layer: 0
   m_Name: Coffin_Door
-  m_TagString: Minimap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

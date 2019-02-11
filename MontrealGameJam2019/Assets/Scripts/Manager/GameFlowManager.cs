@@ -130,7 +130,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	public bool IncreaseLevel() {
 		if (gameState != GameState.InGame) return false;
-		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count) return FoundGrave();
+		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count - 1) return FoundGrave();
 
 		ChangeLevel(currentLevel.id + 1);
 		return true;
@@ -159,7 +159,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	}
 
 	private bool Win() {
-		if (gameState != GameState.InGame) return false;
+		if (gameState != GameState.FoundGrave) return false;
 
         OpenEyeEffect eye = UIManager.Instance.gameObject.GetComponentInChildren<OpenEyeEffect>();
         if (eye != null) eye.Close();
@@ -178,6 +178,8 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
     private bool FoundGrave()
     {
         gameState = GameState.FoundGrave;
+
+        ChangeLevel(currentLevel.id + 1);
 
         storyTeller.OnNarrativeSpeak("Now I remember...\n my family, \n myself, and ... \n my home.");
 
