@@ -1,0 +1,47 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1453929399	DEATH_ALIVE			\Default Work Unit\DEATH_ALIVE	
+
+State	ID	Name	State Group			Notes
+	0	None	DEATH_ALIVE			
+	655265632	ALIVE	DEATH_ALIVE			
+	779278001	DEATH	DEATH_ALIVE			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
+	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	
+	841620460	Concrete			\Factory Reflect Acoustic Textures\Textures\Concrete	
+	1651955069	SIDE_CHAIN_PICKUP			\Default Work Unit\GAME JAM\SIDE_CHAIN_PICKUP	
+	1755085759	Wood_Deep			\Factory Reflect Acoustic Textures\Textures\Wood_Deep	
+	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
+	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
+	2058049674	Wood			\Factory Reflect Acoustic Textures\Textures\Wood	
+	2412606308	Carpet			\Factory Reflect Acoustic Textures\Textures\Carpet	
+	2637588553	Tile			\Factory Reflect Acoustic Textures\Textures\Tile	
+	2928161104	Curtains			\Factory Reflect Acoustic Textures\Textures\Curtains	
+	3195498748	Cork_Tiles			\Factory Reflect Acoustic Textures\Textures\Cork_Tiles	
+	3670307564	Drywall			\Factory Reflect Acoustic Textures\Textures\Drywall	
+	4168643977	Acoustic_Banner			\Factory Reflect Acoustic Textures\Textures\Acoustic_Banner	
+	4262522749	Wood_Bright			\Factory Reflect Acoustic Textures\Textures\Wood_Bright	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	78669895	Ambiant			\Default Work Unit\Master Audio Bus\Ambiant	
+	985987111	Motion Factory Bus			\Default Work Unit\Motion Factory Bus	
+	1069431850	Player			\Default Work Unit\Master Audio Bus\Player	
+	1695690031	Objects			\Default Work Unit\Master Audio Bus\Objects	
+	1883033791	Sidechain			\Default Work Unit\Master Audio Bus\Sidechain	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	3135882657	REVERB_EXT			\Default Work Unit\Master Audio Bus\REVERB_EXT	
+	3603102263	REVERB_MAGIE			\Default Work Unit\Master Audio Bus\REVERB_MAGIE	
+
+Effect plug-ins	ID	Name	Type				Notes
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
+	370218438	Wwise Meter (Custom)	Wwise Meter			
+	701863527	Inside_My_Head	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+	4230635974	Default_Motion_Device	Wwise Motion			
+

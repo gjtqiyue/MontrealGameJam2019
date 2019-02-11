@@ -60,6 +60,8 @@ GameObject:
   - component: {fileID: 1302786405125739373}
   - component: {fileID: 1302786405125739372}
   - component: {fileID: 1302786405125739382}
+  - component: {fileID: 826417381513883619}
+  - component: {fileID: 812414669672677806}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -155,6 +157,10 @@ MonoBehaviour:
   textDist: 15
   handPosition: {fileID: 0}
   fillPerFood: 3
+  FoodEvent:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 11400000, guid: de46d81038b934f48bd60b54b88c7824,
+      type: 2}
 --- !u!65 &1302786405125739372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +186,41 @@ Halo:
     serializedVersion: 2
     rgba: 4278255392
   m_Size: 1.1
+--- !u!114 &826417381513883619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302786405125739375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499493cf415a641999effb04aaae9c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f2d9e0ec
+  useOtherObject: 0
+  data:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 11400000, guid: e9f9295fbc0fe471c917f98c26e690c9,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  valueGuid: 
+--- !u!114 &812414669672677806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302786405125739375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b76e93895544904bdbbca2858e91e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302786405884571290
 GameObject:
   m_ObjectHideFlags: 0

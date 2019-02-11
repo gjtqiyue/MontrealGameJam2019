@@ -5,6 +5,7 @@ using UnityEngine;
 public class Food : Collectable
 {
     public int fillPerFood = 3;
+    public AK.Wwise.Event FoodEvent;
 
     public override void GetCollected(CharacterScript player)
     {
@@ -18,6 +19,7 @@ public class Food : Collectable
             if (random == 1) type = 1;
             else type = 0;
             player.FillHunger(type, fillPerFood);
+            FoodEvent.Post(gameObject);
         }
     }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbefcf74d42444a65a6c36d5c6e23583, type: 3}
   m_Name: 00660862-36A6-4984-89BC-B229912CD7F3
   m_EditorClassIdentifier: 
-  objectName: Play_UI_TIMER
-  id: 68781742
+  objectName: Play_TIMER
+  id: 4169444829
   guid: 00660862-36A6-4984-89BC-B229912CD7F3

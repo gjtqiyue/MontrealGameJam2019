@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 1760904801563016171}
   - component: {fileID: 4886586397298491257}
   - component: {fileID: 2254934150043632829}
-  - component: {fileID: 8272116117961249794}
+  - component: {fileID: 1026138800691147679}
+  - component: {fileID: 7941078791462312898}
+  - component: {fileID: 6392827508062111033}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -131,9 +133,9 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8272116117961249794}
-        m_MethodName: onClick
+        m_CallState: 1
+      - m_Target: {fileID: 1026138800691147679}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,7 +147,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &8272116117961249794
+--- !u!114 &1026138800691147679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +157,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f6f79028a7f4ac5ab9a9826fe54fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7941078791462312898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094462240236746559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499493cf415a641999effb04aaae9c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 9864aaa1
+  useOtherObject: 0
+  data:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 11400000, guid: e9f9295fbc0fe471c917f98c26e690c9,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  valueGuid: 
+--- !u!114 &6392827508062111033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094462240236746559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d346ad97754348ca8ca1d099a35b2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4891269170152276844
@@ -200,6 +237,7 @@ GameObject:
   - component: {fileID: 4891269171114931219}
   - component: {fileID: 4891269171114931220}
   - component: {fileID: 5978334632597231085}
+  - component: {fileID: 5868125607796517366}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -223,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.86, y: -161.17}
+  m_AnchoredPosition: {x: -4.8600006, y: -161.17}
   m_SizeDelta: {x: 270, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4891269171114931219
@@ -318,9 +356,32 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 5868125607796517366}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5868125607796517366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891269171114931222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8ca28dd30684ebd84b7614012d1536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8034861535694049553
 GameObject:
   m_ObjectHideFlags: 0

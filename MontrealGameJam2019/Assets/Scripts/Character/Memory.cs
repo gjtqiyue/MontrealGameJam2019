@@ -7,6 +7,7 @@ public class Memory
     private float leftTime;
     private bool lost;
 
+
     public Memory(float time)
     {
         maxTime = time;

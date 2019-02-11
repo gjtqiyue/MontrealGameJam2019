@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 2002274658919911910}
   - component: {fileID: 2002274658919911919}
   - component: {fileID: 4420292580318288031}
+  - component: {fileID: 8772273455167539064}
+  - component: {fileID: 5818104286834374921}
   m_Layer: 0
   m_Name: FamilyPiece
   m_TagString: Untagged
@@ -110,6 +112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDist: 15
   handPosition: {fileID: 0}
+  Memory:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 11400000, guid: ba2c58d40b4164a59bd07d350a4c1594,
+      type: 2}
   pieceNum: 1
 --- !u!65 &2002274658919911910
 BoxCollider:
@@ -158,6 +164,41 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &8772273455167539064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002274658919911911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499493cf415a641999effb04aaae9c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f2d9e0ec
+  useOtherObject: 0
+  data:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 11400000, guid: e9f9295fbc0fe471c917f98c26e690c9,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  valueGuid: 
+--- !u!114 &5818104286834374921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002274658919911911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b76e93895544904bdbbca2858e91e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002274659806947221
 GameObject:
   m_ObjectHideFlags: 0
