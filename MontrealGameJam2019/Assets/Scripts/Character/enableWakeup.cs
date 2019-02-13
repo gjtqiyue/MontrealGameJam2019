@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class enableWakeup : MonoBehaviour
 {
+    public AK.Wwise.Event CoffinAudio;
   public Animator coffinDoorAnim;
   public Animator malcolmAnim;
   public Animator characterAnim;
-    public AK.Wwise.Event GraveDoor;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +28,6 @@ public class enableWakeup : MonoBehaviour
     public void OpenCoffin()
     {
         coffinDoorAnim.SetTrigger("CoffinDoorOpen");
-        GraveDoor.Post(gameObject);
+        CoffinAudio.Post(gameObject);
     }
 }

@@ -13,6 +13,6 @@ public class UISoundScript : MonoBehaviour
     // Update is called once per frame
     public void onClick()
     {
-        AkSoundEngine.PostEvent("Play_GJ_UI_SELECT_BUTTON", gameObject);
+        AkSoundEngine.PostEvent("UIConfirm", gameObject);
     }
 }

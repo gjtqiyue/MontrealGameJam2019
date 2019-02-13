@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>/Users/mathieufavier/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/MTL_GAMEJAM_2019/</ProjectRoot>
+		<SourceFilesRoot>/Users/mathieufavier/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/MTL_GAMEJAM_2019/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/mathieufavier/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Documents/MontrealGameJam2019/MontrealGameJam2019/Assets/StreamingAssets/Audio/GeneratedSoundBanks/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/mathieufavier/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/MTL_GAMEJAM_2019/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles>
+		<File Id="232580562" Language="SFX">
+			<ShortName>Aigu_01-01.wav</ShortName>
+			<Path>SFX/Aigu_01-01_56D34C19.wem</Path>
+		</File>
+		<File Id="267465574" Language="SFX">
+			<ShortName>AMB_MENU.wav</ShortName>
+			<Path>SFX/AMB_MENU_8956FC97.wem</Path>
+		</File>
+		<File Id="711246500" Language="SFX">
+			<ShortName>Dark_1-02.wav</ShortName>
+			<Path>SFX/Dark_1-02_8956FC97.wem</Path>
+		</File>
+		<File Id="884083681" Language="SFX">
+			<ShortName>GJ_Ambiance_PAD_01.wav</ShortName>
+			<Path>SFX/GJ_Ambiance_PAD_01_8956FC97.wem</Path>
+		</File>
+	</StreamedFiles>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="197860068" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\GAMEJAM\SOUNDBANK_GJ</ObjectPath>
+			<ShortName>SOUNDBANK_GJ</ShortName>
+			<Path>SOUNDBANK_GJ.bnk</Path>
+			<IncludedEvents>
+				<Event Id="733168346" Name="GAME_START" ObjectPath="\Events\Default Work Unit\GAME_START"/>
+				<Event Id="3509424520" Name="Memory" ObjectPath="\Events\Default Work Unit\Memory"/>
+				<Event Id="3701980593" Name="Play_FOOD_PICKUP" ObjectPath="\Events\Default Work Unit\Play_FOOD_PICKUP"/>
+				<Event Id="1323767302" Name="Play_GIRL_LAUGHING" ObjectPath="\Events\Default Work Unit\Play_GIRL_LAUGHING"/>
+				<Event Id="1403698928" Name="Play_GRAVE_OPENING" ObjectPath="\Events\Default Work Unit\Play_GRAVE_OPENING"/>
+				<Event Id="1123583895" Name="Play_GRAVEYARD_AMBIANCE_NIGHT" ObjectPath="\Events\Default Work Unit\Play_GRAVEYARD_AMBIANCE_NIGHT"/>
+				<Event Id="1160194499" Name="Play_GRAVEYARD_AMBIANCE_TIMEOFDAY" ObjectPath="\Events\Default Work Unit\Play_GRAVEYARD_AMBIANCE_TIMEOFDAY"/>
+				<Event Id="2657800154" Name="Play_ONOFF_01" ObjectPath="\Events\Default Work Unit\Play_ONOFF_01"/>
+				<Event Id="2110825224" Name="Play_PLAYER_DEATH_ALIVE" ObjectPath="\Events\Default Work Unit\Play_PLAYER_DEATH_ALIVE"/>
+				<Event Id="98439365" Name="Play_PLAYER_FOOTSTEPS" ObjectPath="\Events\Default Work Unit\Play_PLAYER_FOOTSTEPS"/>
+				<Event Id="2892140914" Name="Play_PLAYER_KNOCK_GRAVE" ObjectPath="\Events\Default Work Unit\Play_PLAYER_KNOCK_GRAVE"/>
+				<Event Id="4169444829" Name="Play_TIMER" ObjectPath="\Events\Default Work Unit\Play_TIMER"/>
+				<Event Id="630493598" Name="Play_WOMAN_LAUGHING" ObjectPath="\Events\Default Work Unit\Play_WOMAN_LAUGHING"/>
+				<Event Id="3083087645" Name="PLAYER_DEATH" ObjectPath="\Events\Default Work Unit\PLAYER_DEATH"/>
+				<Event Id="3422020322" Name="Stop_AMBIANCE_MENU" ObjectPath="\Events\Default Work Unit\Stop_AMBIANCE_MENU" MaxAttenuation="0.000000"/>
+				<Event Id="685626117" Name="UIConfirm" ObjectPath="\Events\Default Work Unit\UIConfirm"/>
+				<Event Id="1791189246" Name="UIEND" ObjectPath="\Events\Default Work Unit\UIEND"/>
+			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="232580562"/>
+				<File Id="267465574"/>
+				<File Id="711246500"/>
+				<File Id="884083681"/>
+			</ReferencedStreamedFiles>
+			<IncludedMemoryFiles>
+				<File Id="14385546" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-03.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-03_56D34C19.wem</Path>
+				</File>
+				<File Id="49410620" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_SFX_LEAVES_04.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_SFX_LEAVES_04_56D34C19.wem</Path>
+				</File>
+				<File Id="56230455" Language="SFX">
+					<ShortName>GJ_MC_SFX_FOODPICKUP_02.wav</ShortName>
+					<Path>SFX/GJ_MC_SFX_FOODPICKUP_02_56D34C19.wem</Path>
+				</File>
+				<File Id="59119977" Language="SFX">
+					<ShortName>GJ_OBJECT_SFX_GRAVEOPENING.wav</ShortName>
+					<Path>SFX/GJ_OBJECT_SFX_GRAVEOPENING_56D34C19.wem</Path>
+				</File>
+				<File Id="69771912" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-02.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-02_56D34C19.wem</Path>
+				</File>
+				<File Id="71874821" Language="SFX">
+					<ShortName>OWL\GJ_AMB_SFX_OWL_-04.wav</ShortName>
+					<Path>SFX/OWL/GJ_AMB_SFX_OWL_-04_56D34C19.wem</Path>
+				</File>
+				<File Id="82061359" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-11.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-11_56D34C19.wem</Path>
+				</File>
+				<File Id="91206428" Language="SFX">
+					<ShortName>KNOCK\GJ_MC_SFX_KNOC_-04.wav</ShortName>
+					<Path>SFX/KNOCK/GJ_MC_SFX_KNOC_-04_56D34C19.wem</Path>
+				</File>
+				<File Id="93887463" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_SFX_LEAVES_03.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_SFX_LEAVES_03_56D34C19.wem</Path>
+				</File>
+				<File Id="96629717" Language="SFX">
+					<ShortName>CROW\GJ_AMB_SFX_CROW_02.wav</ShortName>
+					<Path>SFX/CROW/GJ_AMB_SFX_CROW_02_56D34C19.wem</Path>
+				</File>
+				<File Id="101215701" Language="SFX">
+					<ShortName>GIRL LAUGHING\GJ_AMBIANT_SFX_GIRLLAUGHTING_02.wav</ShortName>
+					<Path>SFX/GIRL LAUGHING/GJ_AMBIANT_SFX_GIRLLAUGHTING_02_56D34C19.wem</Path>
+				</File>
+				<File Id="140278894" Language="SFX">
+					<ShortName>GJ_PLAYER_MC_FOODBAD_01.wav</ShortName>
+					<Path>SFX/GJ_PLAYER_MC_FOODBAD_01_56D34C19.wem</Path>
+				</File>
+				<File Id="156008159" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-05.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-05_56D34C19.wem</Path>
+				</File>
+				<File Id="157098457" Language="SFX">
+					<ShortName>CRICKETS\GJ_AMB_SFX_CRICKETS_-01.wav</ShortName>
+					<Path>SFX/CRICKETS/GJ_AMB_SFX_CRICKETS_-01_56D34C19.wem</Path>
+				</File>
+				<File Id="186827106" Language="SFX">
+					<ShortName>GJ_AMBIANT_SFX_BATFLYINGAWAY.wav</ShortName>
+					<Path>SFX/GJ_AMBIANT_SFX_BATFLYINGAWAY_B1B6DC32.wem</Path>
+				</File>
+				<File Id="204144831" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-06.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-06_56D34C19.wem</Path>
+				</File>
+				<File Id="213393720" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-02.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-02_56D34C19.wem</Path>
+				</File>
+				<File Id="214222310" Language="SFX">
+					<ShortName>Death_01.wav</ShortName>
+					<Path>SFX/Death_01_E543CD0E.wem</Path>
+				</File>
+				<File Id="228813152" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-18.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-18_56D34C19.wem</Path>
+				</File>
+				<File Id="232580562" Language="SFX">
+					<ShortName>Aigu_01-01.wav</ShortName>
+					<Path>SFX/Aigu_01-01_56D34C19.wem</Path>
+					<PrefetchSize>9664</PrefetchSize>
+				</File>
+				<File Id="234558300" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-17.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-17_56D34C19.wem</Path>
+				</File>
+				<File Id="248361740" Language="SFX">
+					<ShortName>OWL\GJ_AMB_SFX_OWL_-02.wav</ShortName>
+					<Path>SFX/OWL/GJ_AMB_SFX_OWL_-02_56D34C19.wem</Path>
+				</File>
+				<File Id="251500365" Language="SFX">
+					<ShortName>GJ_PLAYER_MC_FOODPOSITIVE_01.wav</ShortName>
+					<Path>SFX/GJ_PLAYER_MC_FOODPOSITIVE_01_56D34C19.wem</Path>
+				</File>
+				<File Id="267465574" Language="SFX">
+					<ShortName>AMB_MENU.wav</ShortName>
+					<Path>SFX/AMB_MENU_8956FC97.wem</Path>
+					<PrefetchSize>19264</PrefetchSize>
+				</File>
+				<File Id="278353620" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-03.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-03_56D34C19.wem</Path>
+				</File>
+				<File Id="299961390" Language="SFX">
+					<ShortName>GJ_PLAYER_MC_FOODPOSITIVE_02.wav</ShortName>
+					<Path>SFX/GJ_PLAYER_MC_FOODPOSITIVE_02_56D34C19.wem</Path>
+				</File>
+				<File Id="321564636" Language="SFX">
+					<ShortName>KNOCK\GJ_MC_SFX_KNOC_-02.wav</ShortName>
+					<Path>SFX/KNOCK/GJ_MC_SFX_KNOC_-02_56D34C19.wem</Path>
+				</File>
+				<File Id="321762294" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_SFX_LEAVES_05.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_SFX_LEAVES_05_56D34C19.wem</Path>
+				</File>
+				<File Id="341956637" Language="SFX">
+					<ShortName>MEMORY\GJ_MC_SFX_MEMORYPICKUP_02.wav</ShortName>
+					<Path>SFX/MEMORY/GJ_MC_SFX_MEMORYPICKUP_02_56D34C19.wem</Path>
+				</File>
+				<File Id="375296875" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-23.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-23_56D34C19.wem</Path>
+				</File>
+				<File Id="379637132" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FSLEAVES_-05.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FSLEAVES_-05_56D34C19.wem</Path>
+				</File>
+				<File Id="396717354" Language="SFX">
+					<ShortName>GJ_AMBIANT_SFX_BATFLYINGAWAY.wav</ShortName>
+					<Path>SFX/GJ_AMBIANT_SFX_BATFLYINGAWAY_E878B57D.wem</Path>
+				</File>
+				<File Id="419183679" Language="SFX">
+					<ShortName>METAL\GJ_AMB_SFX_METAL_03.wav</ShortName>
+					<Path>SFX/METAL/GJ_AMB_SFX_METAL_03_56D34C19.wem</Path>
+				</File>
+				<File Id="441928991" Language="SFX">
+					<ShortName>CRICKETS\GJ_AMB_SFX_CRICKETS_-03.wav</ShortName>
+					<Path>SFX/CRICKETS/GJ_AMB_SFX_CRICKETS_-03_56D34C19.wem</Path>
+				</File>
+				<File Id="449730668" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FSLEAVES_-04.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FSLEAVES_-04_56D34C19.wem</Path>
+				</File>
+				<File Id="451014375" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FSLEAVES_-03.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FSLEAVES_-03_56D34C19.wem</Path>
+				</File>
+				<File Id="465114888" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FSLEAVES_-02.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FSLEAVES_-02_56D34C19.wem</Path>
+				</File>
+				<File Id="497790330" Language="SFX">
+					<ShortName>KNOCK\GJ_MC_SFX_KNOC_-03.wav</ShortName>
+					<Path>SFX/KNOCK/GJ_MC_SFX_KNOC_-03_56D34C19.wem</Path>
+				</File>
+				<File Id="498636997" Language="SFX">
+					<ShortName>METAL\GJ_AMB_SFX_METAL_01.wav</ShortName>
+					<Path>SFX/METAL/GJ_AMB_SFX_METAL_01_56D34C19.wem</Path>
+				</File>
+				<File Id="511226921" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-13.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-13_56D34C19.wem</Path>
+				</File>
+				<File Id="523438287" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-09.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-09_56D34C19.wem</Path>
+				</File>
+				<File Id="538637780" Language="SFX">
+					<ShortName>MEMORY\GJ_MC_SFX_MEMORYPICKUP_01.wav</ShortName>
+					<Path>SFX/MEMORY/GJ_MC_SFX_MEMORYPICKUP_01_56D34C19.wem</Path>
+				</File>
+				<File Id="540327989" Language="SFX">
+					<ShortName>MEMORY\GJ_MC_SFX_MEMORYPICKUP_03.wav</ShortName>
+					<Path>SFX/MEMORY/GJ_MC_SFX_MEMORYPICKUP_03_56D34C19.wem</Path>
+				</File>
+				<File Id="540586919" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_SFX_LEAVES_06.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_SFX_LEAVES_06_56D34C19.wem</Path>
+				</File>
+				<File Id="563183618" Language="SFX">
+					<ShortName>CROW\GJ_AMB_SFX_CROW_01.wav</ShortName>
+					<Path>SFX/CROW/GJ_AMB_SFX_CROW_01_56D34C19.wem</Path>
+				</File>
+				<File Id="569084656" Language="SFX">
+					<ShortName>GJ_PLAYER_MC_FOODPOSITIVE_03.wav</ShortName>
+					<Path>SFX/GJ_PLAYER_MC_FOODPOSITIVE_03_56D34C19.wem</Path>
+				</File>
+				<File Id="586043546" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-01.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-01_56D34C19.wem</Path>
+				</File>
+				<File Id="591048609" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-20.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-20_56D34C19.wem</Path>
+				</File>
+				<File Id="597947227" Language="SFX">
+					<ShortName>GJ_UI_SELECT_01.wav</ShortName>
+					<Path>SFX/GJ_UI_SELECT_01_56D34C19.wem</Path>
+				</File>
+				<File Id="603979278" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-07.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-07_56D34C19.wem</Path>
+				</File>
+				<File Id="619368055" Language="SFX">
+					<ShortName>CRICKETS\GJ_AMB_SFX_CRICKETS_-04.wav</ShortName>
+					<Path>SFX/CRICKETS/GJ_AMB_SFX_CRICKETS_-04_56D34C19.wem</Path>
+				</File>
+				<File Id="674750446" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-05.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-05_56D34C19.wem</Path>
+				</File>
+				<File Id="676430293" Language="SFX">
+					<ShortName>OWL\GJ_AMB_SFX_OWL_-03.wav</ShortName>
+					<Path>SFX/OWL/GJ_AMB_SFX_OWL_-03_56D34C19.wem</Path>
+				</File>
+				<File Id="678468765" Language="SFX">
+					<ShortName>METAL\GJ_AMB_SFX_METAL_02.wav</ShortName>
+					<Path>SFX/METAL/GJ_AMB_SFX_METAL_02_56D34C19.wem</Path>
+				</File>
+				<File Id="681088854" Language="SFX">
+					<ShortName>CRICKETS\GJ_AMB_SFX_CRICKETS_-05.wav</ShortName>
+					<Path>SFX/CRICKETS/GJ_AMB_SFX_CRICKETS_-05_56D34C19.wem</Path>
+				</File>
+				<File Id="689832121" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_LEAVES_SFX_02.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_LEAVES_SFX_02_56D34C19.wem</Path>
+				</File>
+				<File Id="711246500" Language="SFX">
+					<ShortName>Dark_1-02.wav</ShortName>
+					<Path>SFX/Dark_1-02_8956FC97.wem</Path>
+					<PrefetchSize>19264</PrefetchSize>
+				</File>
+				<File Id="736788459" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-04.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-04_56D34C19.wem</Path>
+				</File>
+				<File Id="741260594" Language="SFX">
+					<ShortName>OWL\GJ_AMB_SFX_OWL_-01.wav</ShortName>
+					<Path>SFX/OWL/GJ_AMB_SFX_OWL_-01_56D34C19.wem</Path>
+				</File>
+				<File Id="803016536" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-11.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-11_56D34C19.wem</Path>
+				</File>
+				<File Id="804977192" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-08.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-08_56D34C19.wem</Path>
+				</File>
+				<File Id="808899208" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-15.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-15_56D34C19.wem</Path>
+				</File>
+				<File Id="832931589" Language="SFX">
+					<ShortName>LEAVES\GJ_AMB_LEAVES_SFX_01.wav</ShortName>
+					<Path>SFX/LEAVES/GJ_AMB_LEAVES_SFX_01_56D34C19.wem</Path>
+				</File>
+				<File Id="843053587" Language="SFX">
+					<ShortName>FALLING TREE\GJ_AMB_SFX_FALLINGTREE_0-01.wav</ShortName>
+					<Path>SFX/FALLING TREE/GJ_AMB_SFX_FALLINGTREE_0-01_56D34C19.wem</Path>
+				</File>
+				<File Id="881350183" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FS_-05.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FS_-05_56D34C19.wem</Path>
+				</File>
+				<File Id="884083681" Language="SFX">
+					<ShortName>GJ_Ambiance_PAD_01.wav</ShortName>
+					<Path>SFX/GJ_Ambiance_PAD_01_8956FC97.wem</Path>
+					<PrefetchSize>19264</PrefetchSize>
+				</File>
+				<File Id="886381251" Language="SFX">
+					<ShortName>GIRL LAUGHING\GJ_AMBIANT_SFX_GIRLLAUGHTING_03.wav</ShortName>
+					<Path>SFX/GIRL LAUGHING/GJ_AMBIANT_SFX_GIRLLAUGHTING_03_56D34C19.wem</Path>
+				</File>
+				<File Id="889963414" Language="SFX">
+					<ShortName>GJ_MC_SFX_FOODPICKUP_03.wav</ShortName>
+					<Path>SFX/GJ_MC_SFX_FOODPICKUP_03_56D34C19.wem</Path>
+				</File>
+				<File Id="920858462" Language="SFX">
+					<ShortName>GIRL LAUGHING\GJ_AMBIANT_SFX_GIRLLAUGHTING_01.wav</ShortName>
+					<Path>SFX/GIRL LAUGHING/GJ_AMBIANT_SFX_GIRLLAUGHTING_01_56D34C19.wem</Path>
+				</File>
+				<File Id="940105151" Language="SFX">
+					<ShortName>KNOCK\GJ_MC_SFX_KNOC_-01.wav</ShortName>
+					<Path>SFX/KNOCK/GJ_MC_SFX_KNOC_-01_56D34C19.wem</Path>
+				</File>
+				<File Id="961421375" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-17.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-17_56D34C19.wem</Path>
+				</File>
+				<File Id="967997768" Language="SFX">
+					<ShortName>Flashlight_ONOFF_01.wav</ShortName>
+					<Path>SFX/Flashlight_ONOFF_01_56D34C19.wem</Path>
+				</File>
+				<File Id="1002406823" Language="SFX">
+					<ShortName>FS\GJ_MC_FOLEY_FSLEAVES_-01.wav</ShortName>
+					<Path>SFX/FS/GJ_MC_FOLEY_FSLEAVES_-01_56D34C19.wem</Path>
+				</File>
+				<File Id="1015120561" Language="SFX">
+					<ShortName>CRICKETS\GJ_AMB_SFX_CRICKETS_-02.wav</ShortName>
+					<Path>SFX/CRICKETS/GJ_AMB_SFX_CRICKETS_-02_56D34C19.wem</Path>
+				</File>
+				<File Id="1016157966" Language="SFX">
+					<ShortName>GJ_MC_SFX_FOODPICKUP_01.wav</ShortName>
+					<Path>SFX/GJ_MC_SFX_FOODPICKUP_01_56D34C19.wem</Path>
+				</File>
+				<File Id="1034090676" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-14.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-14_56D34C19.wem</Path>
+				</File>
+				<File Id="1069551065" Language="SFX">
+					<ShortName>bat\GJ_AMBIANT_SFX_BAT_-26.wav</ShortName>
+					<Path>SFX/bat/GJ_AMBIANT_SFX_BAT_-26_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

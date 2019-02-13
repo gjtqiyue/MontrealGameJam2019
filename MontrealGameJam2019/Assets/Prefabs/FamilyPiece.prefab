@@ -114,7 +114,8 @@ MonoBehaviour:
   handPosition: {fileID: 0}
   Memory:
     valueGuid: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: ba2c58d40b4164a59bd07d350a4c1594,
+      type: 2}
   pieceNum: 1
 --- !u!65 &2002274658919911910
 BoxCollider:

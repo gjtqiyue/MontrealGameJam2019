@@ -14,17 +14,22 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAME_START = 733168346U;
-        static const AkUniqueID PLAY_FLASHLIGHT_ONOFF_01 = 2698074747U;
+        static const AkUniqueID MEMORY = 3509424520U;
         static const AkUniqueID PLAY_FOOD_PICKUP = 3701980593U;
-        static const AkUniqueID PLAY_GJ_UI_SELECT_BUTTON = 1352814712U;
+        static const AkUniqueID PLAY_GIRL_LAUGHING = 1323767302U;
         static const AkUniqueID PLAY_GRAVE_OPENING = 1403698928U;
         static const AkUniqueID PLAY_GRAVEYARD_AMBIANCE_NIGHT = 1123583895U;
         static const AkUniqueID PLAY_GRAVEYARD_AMBIANCE_TIMEOFDAY = 1160194499U;
-        static const AkUniqueID PLAY_MEMORY_PICKUP = 434982298U;
+        static const AkUniqueID PLAY_ONOFF_01 = 2657800154U;
         static const AkUniqueID PLAY_PLAYER_DEATH_ALIVE = 2110825224U;
         static const AkUniqueID PLAY_PLAYER_FOOTSTEPS = 98439365U;
         static const AkUniqueID PLAY_PLAYER_KNOCK_GRAVE = 2892140914U;
-        static const AkUniqueID PLAY_UI_TIMER = 68781742U;
+        static const AkUniqueID PLAY_TIMER = 4169444829U;
+        static const AkUniqueID PLAY_WOMAN_LAUGHING = 630493598U;
+        static const AkUniqueID PLAYER_DEATH = 3083087645U;
+        static const AkUniqueID STOP_AMBIANCE_MENU = 3422020322U;
+        static const AkUniqueID UICONFIRM = 685626117U;
+        static const AkUniqueID UIEND = 1791189246U;
     } // namespace EVENTS
 
     namespace STATES
