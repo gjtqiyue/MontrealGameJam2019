@@ -34,9 +34,11 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     [SerializeField]
     private PlayableDirector endingTimeline;
-
+    
+    [SerializeField]
     private GameState gameState = GameState.StartMenu;
 
+    [SerializeField]
 	private LevelData currentLevel;
 
 	private InGameUI inGameUI;
@@ -55,11 +57,15 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
     private void Update()
     {
         if (testButton)
+        {
             TriggerEndingCutScene();
+            testButton = false;
+        }
     }
 
     public IEnumerator StartGame() {
 		if (gameState != GameState.StartMenu) yield break;
+
 		titleTimeline.Play();
 
 		yield return new WaitForSeconds(2.5f);
@@ -76,13 +82,16 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
         mainCamera.gameObject.SetActive(false);
 		titleTimeline.time = 0;
 		currentLevel = levelDatas.LevelDatas[0];
-		gameState = GameState.InGame;
-        storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
+        titleTimeline.enabled = false;
 
-        storyTeller.OnNarrativeSpeak("Where am I...... \n and....\n who am I.......");
+		gameState = GameState.InGame;
+
+        storyTeller = UIManager.Instance.gameObject.GetComponentInChildren<Narrative>();
 
         // trigger the cuffin to open the door
         player.GetComponent<enableWakeup>().OpenCoffin();
+
+        StartCoroutine(storyTeller.OnNarrativeSpeak("\"Where am I...... \n and....\n who am I.......\"\nYou woke up but you realize you can't remember anything"));
 
         yield return null;
 	}
@@ -94,7 +103,9 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
         yield return new WaitForSeconds(2);
 
-        storyTeller.OnNarrativeSpeak("What home means to me...... maybe I will figure it out if I can find more clue");
+        StartCoroutine(storyTeller.OnNarrativeSpeak("You found a dirty photo on the ground which is too blury to recognize, maybe you will figure it out if you can find more clue"));
+
+        yield return new WaitForSeconds(1);
 
         CharacterScript sc = player.GetComponent<CharacterScript>();
  
@@ -130,7 +141,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	public bool IncreaseLevel() {
 		if (gameState != GameState.InGame) return false;
-		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count - 1) return FoundGrave();
+		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count-1) return FoundGrave();
 
 		ChangeLevel(currentLevel.id + 1);
 		return true;
@@ -139,6 +150,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	public bool PlayerDead() {
 		if (gameState != GameState.InGame) return false;
 		gameState = GameState.Dead;
+
 		CharacterScript sc = player.GetComponent<CharacterScript>();
 		if (inGameUI != null) {
 			inGameUI.Destroy(sc);
@@ -150,7 +162,8 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 	}
 
 	private void ChangeLevel(int level) {
-		if(level < 0 || level >= levelDatas.LevelDatas.Count) {
+        Debug.Log("change to " + level);
+		if(level < 0 || level > levelDatas.LevelDatas.Count) {
 			Debug.LogError("Calling unreachable Level");
 		} else {
 			currentLevel = levelDatas.LevelDatas[level];
@@ -178,10 +191,12 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
     private bool FoundGrave()
     {
         gameState = GameState.FoundGrave;
+        Debug.Log("found grave");
+        OnLevelRefresh -= FamilyPieceManager.Instance.SpawnNewMemory;
 
         ChangeLevel(currentLevel.id + 1);
 
-        storyTeller.OnNarrativeSpeak("Now I remember...\n my family, \n myself, and ... \n my home.");
+        StartCoroutine(storyTeller.OnNarrativeSpeak("Now you remember...\n about your family, \n about yourself, and ... \n about your home\n You decide to go find the final place of your family"));
 
         return true;
     }
@@ -193,6 +208,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     public void TriggerEndingCutScene()
     {
+        endingTimeline.enabled = true;
         endingTimeline.GetComponent<EndGameCutSceneScript>().InitializePosition();
 
         // disable the player camera

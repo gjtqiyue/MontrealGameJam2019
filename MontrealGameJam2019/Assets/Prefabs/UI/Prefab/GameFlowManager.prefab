@@ -44,11 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9539243751922174980a34c36ef82f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testButton: 0
   levelDatas: {fileID: 11400000, guid: a6bbe5caeb0ae9c4988608bcdbdc87b9, type: 2}
+  nightDaySwitchScript: {fileID: 0}
   player: {fileID: 0}
   mainCamera: {fileID: 0}
   titleTimeline: {fileID: 0}
   endingTimeline: {fileID: 0}
+  gameState: 0
+  currentLevel:
+    name: 
+    id: 0
+    numberOfFood: 0
+    totalTimer: 0
+    hunger: 0
+    memoryPrefab: {fileID: 0}
 --- !u!114 &133560588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +79,7 @@ MonoBehaviour:
   distance: 7
   spotParent: {fileID: 0}
   hand: {fileID: 0}
+  familyGrave: {fileID: 0}
   familyPhotos:
   - {fileID: 5690159147306028116, guid: 354ec41124946f34aba4165a38445828, type: 3}
   - {fileID: 6602919298797162859, guid: 660bb960eaad0cf4bb81a06752ced765, type: 3}

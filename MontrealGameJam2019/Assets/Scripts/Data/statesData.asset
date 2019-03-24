@@ -14,31 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SerializeLevelDataList
   LevelDatas:
   - name: Level0
-    id: 1
+    id: 0
     numberOfFood: 0
     totalTimer: 20
     hunger: 50
     memoryPrefab: {fileID: 0}
   - name: level1
-    id: 2
+    id: 1
     numberOfFood: 20
     totalTimer: 20
     hunger: 50
     memoryPrefab: {fileID: 0}
   - name: level2
-    id: 3
+    id: 2
     numberOfFood: 10
     totalTimer: 15
     hunger: 50
     memoryPrefab: {fileID: 0}
   - name: level3
-    id: 4
+    id: 3
     numberOfFood: 5
     totalTimer: 15
     hunger: 50
     memoryPrefab: {fileID: 0}
   - name: grave
-    id: 5
+    id: 4
     numberOfFood: 10
     totalTimer: 20
     hunger: 50

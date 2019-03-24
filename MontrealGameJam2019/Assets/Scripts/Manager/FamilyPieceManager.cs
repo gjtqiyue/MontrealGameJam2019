@@ -49,7 +49,7 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 			spawnSpots.Add(t);
 		}
 		numberGenerator = new System.Random();
-		CreateNewPiece(piecePrefab, spawnSpots[numberGenerator.Next(0, spawnSpots.Count)], 1);
+		CreateNewPiece(piecePrefab, spawnSpots[numberGenerator.Next(0, spawnSpots.Count)], 0);
 		GameFlowManager.Instance.OnLevelRefresh += SpawnNewMemory;
 	}
 
@@ -98,7 +98,7 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 
             // set the piece number
             Debug.Log("family piece " + level);
-            c.pieceNum = level;
+            c.pieceNum = level+1;
         }
         else {
             currentPieceTranform = position; 

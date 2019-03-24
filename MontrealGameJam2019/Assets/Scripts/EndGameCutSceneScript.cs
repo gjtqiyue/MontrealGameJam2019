@@ -12,7 +12,7 @@ public class EndGameCutSceneScript : MonoBehaviour
     public void InitializePosition()
     {
         Vector3 left = -player.transform.right;
-        Vector3 pos = player.transform.position + left * 10 + Vector3.up * 5;
+        Vector3 pos = player.transform.position + left * 5 + Vector3.up * 2;
         vcam3.transform.position = pos;
     }
 }

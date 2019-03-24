@@ -20,8 +20,6 @@ public class CharacterScript : MonoBehaviour
 	public event Action<float> OnMemoryIncreased;
 	public event Action<float> OnMemoryDecreased;
 
-
-
 	private FPController fpController;
     [SerializeField]
     private bool PlayerEffectEnabled;              // the effect will work when player is controlling
@@ -114,17 +112,19 @@ public class CharacterScript : MonoBehaviour
 
         memCollectionOrder.Enqueue(num);
 
-		// show the photo to the player
-		StartCoroutine(ShowPhoto(num));
+        // show the photo to the player
+        Debug.Log("show photo of " + num);
+       
+	    StartCoroutine(ShowPhoto(num));
     }
 
 	IEnumerator ShowPhoto(int num) {
 		GameObject obj = FamilyPieceManager.Instance.GetPhotoPiece(num);
 		Transform mainCam = transform.GetChild(0);
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(5);
         GameObject photo = Instantiate(obj, mainCam.position + (transform.forward * 1), Quaternion.identity, transform);
 		photo.transform.localRotation = Quaternion.Euler(90,180,0);
-		yield return new WaitForSeconds(7);
+		yield return new WaitForSeconds(5);
 		Destroy(photo.gameObject);
 	}
 

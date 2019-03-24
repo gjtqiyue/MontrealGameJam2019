@@ -111,7 +111,7 @@ public abstract class AkUnityEventHandler : UnityEngine.MonoBehaviour
 					trigger.triggerDelegate -= in_delegate;
 
 					if (trigger.triggerDelegate == null)
-						Destroy(trigger);
+						DestroyImmediate(trigger);
 				}
 			}
 		}

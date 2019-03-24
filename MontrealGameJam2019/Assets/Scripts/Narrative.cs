@@ -14,15 +14,9 @@ public class Narrative : MonoBehaviour
         t = gameObject.GetComponent<Text>();
     }
 
-    public void OnNarrativeSpeak(string sentence)
-    { 
-        StopCoroutine(Show(sentence));
-        StartCoroutine(Show(sentence));
-    }
-
-    IEnumerator Show(string sentence)
+    public IEnumerator OnNarrativeSpeak(string sentence)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         t.text = sentence;
         anim.Play("FadeIn");
     }

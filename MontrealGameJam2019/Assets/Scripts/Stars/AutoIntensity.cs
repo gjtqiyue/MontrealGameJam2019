@@ -27,7 +27,7 @@ public class AutoIntensity : MonoBehaviour {
 
     public bool nightDaySwitch = false;
 
-    float skySpeed = 1;
+    float skySpeed = 1f;
 
 
     Light mainLight;

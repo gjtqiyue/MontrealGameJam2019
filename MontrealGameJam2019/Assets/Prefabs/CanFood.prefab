@@ -73,7 +73,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147322291}
   m_LocalRotation: {x: -0, y: 0.9868309, z: -0.16175579, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.37}
+  m_LocalPosition: {x: 0, y: 0, z: 0.136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 598126168}
@@ -81,8 +81,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 18.618, y: 180.00002, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.49, y: -1.24}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -0.83, y: -0.222}
+  m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2147322296
 MeshRenderer:
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -319,6 +319,9 @@ MonoBehaviour:
   textDist: 15
   handPosition: {fileID: 0}
   fillPerFood: 3
+  FoodEvent:
+    valueGuid: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!65 &8306903364274366222
 BoxCollider:
   m_ObjectHideFlags: 0
