@@ -156,7 +156,7 @@ MonoBehaviour:
   fogScale: 1
   dayAtmosphereThickness: 0.4
   nightAtmosphereThickness: 0.4
-  dayRotateSpeed: {x: -1, y: 0, z: 0}
+  dayRotateSpeed: {x: -0.7, y: 0, z: 0}
   nightRotateSpeed: {x: -2, y: 0, z: 0}
   nightDaySwitch: 0
 --- !u!114 &4290170922729728799
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44387afc5ab7e491b83baec598a9a50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars: {fileID: 4256558208433477048, guid: aee88671156f346a5bf19bf99e47e132, type: 3}
+  stars: {fileID: 0}

@@ -16,7 +16,7 @@ public class UIManager : ManagerBase<UIManager>
 	private string titleUIName = "title";
 	private string inGameUIName = "inGame";
 	private string deadGameUIName = "dead";
-    private string endGaameUIName = "end";
+    private string endGameUIName = "end";
 
 	public void Start() {
 		activeUIs = new Dictionary<string, GameObject>();
@@ -53,6 +53,6 @@ public class UIManager : ManagerBase<UIManager>
 
     public void EndGame()
     {
-        RemoveAndAdd(inGameUIName, endGaameUIName);
+        RemoveAndAdd(inGameUIName, endGameUIName);
     }
 }

@@ -208,8 +208,10 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     public void TriggerEndingCutScene()
     {
+        player.gameObject.SetActive(false);
         endingTimeline.enabled = true;
         endingTimeline.GetComponent<EndGameCutSceneScript>().InitializePosition();
+        endingTimeline.GetComponent<EndGameCutSceneScript>().TriggerAnimation();
 
         // disable the player camera
         player.transform.GetChild(0).GetComponent<Camera>().enabled = false;

@@ -25,6 +25,7 @@ public class Grave : MonoBehaviour
             if (Input.GetButtonDown("XboxA") && trig)
             {
                 // trigger the ending
+                t.gameObject.SetActive(false);
                 GameFlowManager.Instance.TriggerEndingCutScene();
             }
         }
