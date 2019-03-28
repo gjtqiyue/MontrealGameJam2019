@@ -34,3 +34,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# asset
+MontrealGameJam2019/Assets/KriptoFX/
+MontrealGameJam2019/Assets/KriptoFX.meta
+Logs/
