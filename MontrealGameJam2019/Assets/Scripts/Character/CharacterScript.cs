@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterScript : MonoBehaviour
 {
+    public GameObject flashLight;
     public Text display;
     public float hungerLimit;
     public float hungerRate = 0.1f;
@@ -55,6 +56,9 @@ public class CharacterScript : MonoBehaviour
 
     public void InitializeOnStart()
     {
+        // enable flashlight
+        flashLight.SetActive(true);
+
         // add the memory to the queque and the map
         ReceiveMemory(0);
 

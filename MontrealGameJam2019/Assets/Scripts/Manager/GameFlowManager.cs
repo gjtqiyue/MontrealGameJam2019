@@ -237,7 +237,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     IEnumerator WaitForEnd()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
 
         Win();
     }
