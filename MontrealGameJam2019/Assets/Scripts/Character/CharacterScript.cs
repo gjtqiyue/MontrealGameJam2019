@@ -21,6 +21,9 @@ public class CharacterScript : MonoBehaviour
 	public event Action<float> OnMemoryIncreased;
 	public event Action<float> OnMemoryDecreased;
 
+    [SerializeField]
+    private int damage;
+
 	private FPController fpController;
     [SerializeField]
     private bool PlayerEffectEnabled;              // the effect will work when player is controlling
@@ -96,6 +99,7 @@ public class CharacterScript : MonoBehaviour
     // when receive the memory, we add the memory to the map and update the queue
     public void ReceiveMemory(int num)
     {
+        StartCoroutine(GameFlowManager.Instance.AquireMemory(num));
 		
         // if the number already exist it means that the player obtained this memory before
         if (memories.ContainsKey(num))
@@ -229,7 +233,15 @@ public class CharacterScript : MonoBehaviour
         fpController.PickUp();
     }
 
-
+    public void GetHitByMonster()
+    {
+        damage++;
+        if (damage > 3)
+        {
+            damage = 0;
+            LoseMemory();
+        }
+    }
 
 
 }

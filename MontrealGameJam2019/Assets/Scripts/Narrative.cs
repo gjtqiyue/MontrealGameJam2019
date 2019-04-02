@@ -16,7 +16,7 @@ public class Narrative : MonoBehaviour
 
     public IEnumerator OnNarrativeSpeak(string sentence)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         t.text = sentence;
         anim.Play("FadeIn");
     }

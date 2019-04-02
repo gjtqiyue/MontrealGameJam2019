@@ -100,13 +100,6 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
     {
         // Look at the note and think about it
         // TODO
-
-        yield return new WaitForSeconds(2);
-
-        StartCoroutine(storyTeller.OnNarrativeSpeak("You found a dirty photo on the ground which is too blury to recognize, maybe you will figure it out if you can find more clue"));
-
-        yield return new WaitForSeconds(1);
-
         CharacterScript sc = player.GetComponent<CharacterScript>();
  
         if (inGameUI != null)
@@ -124,8 +117,30 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
         yield return null;
     }
 
-	//activate the in game ui
-	private void ActivateInGameUI() {
+    public IEnumerator AquireMemory(int idx)
+    {
+        // Look at the note and think about it
+        // TODO
+        string[] memoryLines = new string[]
+        {
+            "You found a dirty photo on the ground, you can barely recognize any figure in the photo, however, you feel a nostalgic feeling when you look at the photo",
+            "During the high school, I would cry alone in the closet under the stairs because, ",
+            "Jiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+            "Pooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+            "Biuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+        };
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(storyTeller.OnNarrativeSpeak(memoryLines[idx]));
+
+        yield return new WaitForSeconds(1);
+
+        yield return null;
+    }
+
+    //activate the in game ui
+    private void ActivateInGameUI() {
 		if(inGameUI != null) {
 			inGameUI.ActivateUI();
 		}

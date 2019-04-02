@@ -23,4 +23,7 @@ public class LevelData
 
 	[SerializeField]
 	public GameObject memoryPrefab;
+
+    [SerializeField]
+    public int monsterCount;
 }

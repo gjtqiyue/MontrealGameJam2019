@@ -51,7 +51,8 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
 		numberGenerator = new System.Random();
 		CreateNewPiece(piecePrefab, spawnSpots[numberGenerator.Next(0, spawnSpots.Count)], 0);
 		GameFlowManager.Instance.OnLevelRefresh += SpawnNewMemory;
-	}
+        GameFlowManager.Instance.OnLevelRefresh += SpawnNewMonster;
+    }
 
 	// create a new memory on the map
 	public void SpawnNewMemory(LevelData data) {
@@ -83,6 +84,12 @@ public class FamilyPieceManager : ManagerBase<FamilyPieceManager>
             CreateNewFood(data.numberOfFood);
         }
 	}
+
+    public void SpawnNewMonster(LevelData data)
+    {
+        int monsterCount = data.monsterCount;
+        MonsterManager.Instance.SpawnMonster(MonsterManager.MonsterDictionary.Mummy, monsterCount);
+    }
 
 	public GameObject GetPhotoPiece(int num) {
 		return Instantiate(familyPhotos[num]);
