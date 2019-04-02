@@ -68,9 +68,6 @@ public class InGameUI : MonoBehaviour
 			}
 			memory -= thisFill;
 		}
-
-        // feedback text
-        if (memory > 1) StartCoroutine(GainMemoryText());
     }
 
 	public void DecreaseMemory(float amount) {
@@ -90,24 +87,8 @@ public class InGameUI : MonoBehaviour
 			memories.Dequeue();
 			Destroy(memory.gameObject);
 
-            // feedback text about losing memory
-            StartCoroutine(LoseMemoryText());
 		}
 	}
-
-    IEnumerator LoseMemoryText()
-    {
-        feedbackText.text = "I feel like I forget something important.";
-        yield return new WaitForSeconds(2);
-        feedbackText.text = "";
-    }
-
-    IEnumerator GainMemoryText()
-    {
-        feedbackText.text = "I remember I used to play with him on the backyard of the house";
-        yield return new WaitForSeconds(2);
-        feedbackText.text = "";
-    }
 
 	private void ChangeHunger(float amount) {
 		if (hungerIndicator == null) return;

@@ -33,7 +33,7 @@ MonoBehaviour:
     totalTimer: 30
     hunger: 35
     memoryPrefab: {fileID: 0}
-    monsterCount: 3
+    monsterCount: 2
   - name: Level3
     id: 3
     numberOfFood: 10
@@ -47,7 +47,7 @@ MonoBehaviour:
     totalTimer: 40
     hunger: 50
     memoryPrefab: {fileID: 0}
-    monsterCount: 4
+    monsterCount: 2
   - name: FamilyGrave
     id: 5
     numberOfFood: 0

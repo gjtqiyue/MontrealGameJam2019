@@ -91,7 +91,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
         // trigger the cuffin to open the door
         player.GetComponent<enableWakeup>().OpenCoffin();
 
-        StartCoroutine(storyTeller.OnNarrativeSpeak("\"Where am I...... \n and....\n who am I.......\"\nYou woke up but you realize you can't remember anything"));
+        storyTeller.WakeUpLine();
 
         yield return null;
 	}
@@ -121,18 +121,9 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
     {
         // Look at the note and think about it
         // TODO
-        string[] memoryLines = new string[]
-        {
-            "You found a dirty photo on the ground, you can barely recognize any figure in the photo, however, you feel a nostalgic feeling when you look at the photo",
-            "During the high school, I would cry alone in the closet under the stairs because, ",
-            "Jiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
-            "Pooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-            "Biuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
-        };
-
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(storyTeller.OnNarrativeSpeak(memoryLines[idx]));
+        storyTeller.RecallFamilyMembers(idx);
 
         yield return new WaitForSeconds(1);
 
@@ -156,7 +147,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
 	public bool IncreaseLevel() {
 		if (gameState != GameState.InGame) return false;
-		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count-1) return FoundGrave();
+		if (currentLevel.id+1 >= levelDatas.LevelDatas.Count-2) return FoundGrave();
 
 		ChangeLevel(currentLevel.id + 1);
 		return true;
@@ -211,7 +202,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
         ChangeLevel(currentLevel.id + 1);
 
-        StartCoroutine(storyTeller.OnNarrativeSpeak("Now you remember...\n about your family, \n about yourself, and ... \n about your home\n You decide to go find the final place of your family"));
+        storyTeller.RecallAllFamily(10);
 
         return true;
     }
@@ -223,16 +214,17 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 
     public void TriggerEndingCutScene()
     {
-        player.gameObject.SetActive(false);
-        endingTimeline.enabled = true;
-        endingTimeline.GetComponent<EndGameCutSceneScript>().InitializePosition();
+        player.gameObject.GetComponent<MeshRenderer>().enabled = false;
         endingTimeline.GetComponent<EndGameCutSceneScript>().TriggerAnimation();
+        endingTimeline.enabled = true;
+       // endingTimeline.GetComponent<EndGameCutSceneScript>().InitializePosition();
+        
 
         // disable the player camera
         player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
 
         titleTimeline.gameObject.SetActive(false);
-        mainCamera.gameObject.SetActive(true);
+        //mainCamera.gameObject.SetActive(true);
 
         endingTimeline.time = 0;
 

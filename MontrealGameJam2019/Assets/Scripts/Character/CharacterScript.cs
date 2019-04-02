@@ -243,5 +243,11 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
+    public void EnableCamera()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("MainCamera");
+        obj.SetActive(true);
+    }
+
 
 }

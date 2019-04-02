@@ -9,6 +9,11 @@ public class enableWakeup : MonoBehaviour
   public Animator characterAnim;
     public AK.Wwise.Event GraveOpen;
 
+    private void Start()
+    {
+        characterAnim.SetBool("Intro", true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -17,8 +22,9 @@ public class enableWakeup : MonoBehaviour
 
     }
 
-    public void DeactivateAnimator()
+    public void ExitIntro()
     {
+        characterAnim.SetBool("Intro", false);
         characterAnim.enabled = false;
 
         // call the game manager to show the player the note

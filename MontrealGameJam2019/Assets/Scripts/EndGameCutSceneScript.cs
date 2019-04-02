@@ -26,6 +26,7 @@ public class EndGameCutSceneScript : MonoBehaviour
 
     public void TriggerAnimation()
     {
-        anim.SetBool("EndGame", true);
+        player.gameObject.GetComponent<Animator>().enabled = true;
+        player.gameObject.GetComponent<Animator>().SetBool("EndGame", true);
     }
 }

@@ -314,9 +314,10 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 3
-    functionName: DeactivateAnimator
+    functionName: ExitIntro
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: 3e82578e44ebc4c02b5d3fc087f95b7b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
