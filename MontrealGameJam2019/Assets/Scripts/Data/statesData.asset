@@ -9,31 +9,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 9c703aa71a9a3494c84c9aefcde90b46, type: 3}
   m_Name: statesData
-  m_EditorClassIdentifier: Assembly-CSharp::SerializeLevelDataList
+  m_EditorClassIdentifier: 
   LevelDatas:
-  - name: Level1
-    id: 0
+  - name: 1
+    id: 1
     numberOfFood: 0
     totalTimer: 20
     hunger: 50
     memoryPrefab: {fileID: 0}
-  - name: Level1
-    id: 1
-    numberOfFood: 10
-    totalTimer: 15
-    hunger: 40
-    memoryPrefab: {fileID: 0}
-  - name: Level1
+  - name: 2
     id: 2
-    numberOfFood: 10
-    totalTimer: 10
-    hunger: 44
+    numberOfFood: 0
+    totalTimer: 20
+    hunger: 50
     memoryPrefab: {fileID: 0}
-  - name: Level1
+  - name: 3
     id: 3
-    numberOfFood: 10
-    totalTimer: 5
-    hunger: 38
+    numberOfFood: 0
+    totalTimer: 20
+    hunger: 50
+    memoryPrefab: {fileID: 0}
+  - name: 4
+    id: 4
+    numberOfFood: 0
+    totalTimer: 20
+    hunger: 50
+    memoryPrefab: {fileID: 0}
+  - name: 5
+    id: 5
+    numberOfFood: 0
+    totalTimer: 20
+    hunger: 50
     memoryPrefab: {fileID: 0}

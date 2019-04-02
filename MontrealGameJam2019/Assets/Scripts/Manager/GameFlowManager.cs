@@ -17,7 +17,7 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 {
 
 	[SerializeField]
-	private SerializeLevelDataList levelDatas;
+	private SerializedLevelDataList levelDatas;
 
 	[SerializeField]
 	private GameObject player;

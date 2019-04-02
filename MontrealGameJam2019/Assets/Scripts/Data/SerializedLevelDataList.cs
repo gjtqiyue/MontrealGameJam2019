@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CreateAssetMenu(fileName = "statesData", menuName = "createStatesData", order = 1)]
-[System.Serializable]
-public class SerializeLevelDataList : ScriptableObject
+#endif
+public class SerializedLevelDataList : ScriptableObject
 {
 	public List<LevelData> LevelDatas;
 }
+

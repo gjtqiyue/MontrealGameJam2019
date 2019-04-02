@@ -34,13 +34,15 @@ public class InGameUI : MonoBehaviour
 		c.OnHungerChanged += ChangeHunger;
 		c.OnMemoryDecreased += DecreaseMemory;
 		c.OnMemoryIncreased += AddMemory;
-	}
+		c.OnMemoryRefreshed += FillLastMemory;
+}
 
-	//initialize to add ui action when the player states changed
-	public void Destroy(CharacterScript c) {
+//initialize to add ui action when the player states changed
+public void Destroy(CharacterScript c) {
 		c.OnHungerChanged -= ChangeHunger;
 		c.OnMemoryDecreased -= DecreaseMemory;
 		c.OnMemoryIncreased -= AddMemory;
+		c.OnMemoryRefreshed -= FillLastMemory;
 	}
 
 	public void ActivateUI() {
@@ -109,7 +111,7 @@ public class InGameUI : MonoBehaviour
 		memories.Enqueue(image);
 	}
 
-	private void FillLastMemory(float fillAmount) {
+	public void FillLastMemory(float fillAmount) {
 		var memory = memories.Peek();
 		memory.color = new Color(memory.color.r, memory.color.g, memory.color.b, memory.color.a + fillAmount);
 

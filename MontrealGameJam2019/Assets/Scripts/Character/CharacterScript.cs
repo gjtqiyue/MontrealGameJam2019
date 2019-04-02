@@ -13,13 +13,15 @@ public class CharacterScript : MonoBehaviour
     public float hunger;
     public float memoryLoseRate = 0.005f;
     public float memoryLoseAmt = 5;
-    public float memoryLastTime = 20;
+    public float memoryLastTime = 200;
     public Dictionary<int, Memory> memories;
     public Queue<int> memCollectionOrder;
 	public event Action<float> OnHungerChanged;
 	public event Action<float> OnMemoryIncreased;
 	public event Action<float> OnMemoryDecreased;
-    public AK.Wwise.Event MemoryEvent;
+	public event Action<float> OnMemoryRefreshed;
+
+	public AK.Wwise.Event MemoryEvent;
 
 
 	private FPController fpController;
@@ -94,7 +96,12 @@ public class CharacterScript : MonoBehaviour
     // when receive the memory, we add the memory to the map and update the queue
     public void ReceiveMemory(int num)
     {
-		
+		if(memCollectionOrder.Count > 0) {
+			int i = memCollectionOrder.Peek();
+			if (memCollectionOrder.Count > 0) memories[i].Recover();
+			OnMemoryRefreshed(1);
+		}
+
         // if the number already exist it means that the player obtained this memory before
         if (memories.ContainsKey(num))
         {
@@ -105,11 +112,10 @@ public class CharacterScript : MonoBehaviour
             memories.Add(num, new Memory(memoryLastTime));
         }
 
-		if(OnMemoryDecreased != null) {
+		if(OnMemoryIncreased != null) {
 			OnMemoryIncreased(1);
 		}
-		Debug.Log("receive memory " + num);
-        if(memCollectionOrder.Count > 0) memories[memCollectionOrder.Peek()].Recover();
+
         memCollectionOrder.Enqueue(num);
 
 		// show the photo to the player
@@ -141,7 +147,18 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
-    IEnumerator DecreaseMemory()
+	//mark one memory as lost
+	public void LoseOneMemory() {
+		int num = memCollectionOrder.Peek();
+		if (memories[num] != null) {
+			memories[num].Lose(memoryLastTime);
+			if (OnMemoryDecreased != null) {
+				OnMemoryDecreased.Invoke(memoryLastTime);
+			}
+		}
+	}
+
+	IEnumerator DecreaseMemory()
     {
         while (Time.time < 5000 && memCollectionOrder.Count > 0)
         {
@@ -211,8 +228,8 @@ public class CharacterScript : MonoBehaviour
                 hunger += fill;
 				OnHungerChanged.Invoke(fill / hungerLimit);
 				Debug.Log("bad food");
-                LoseMemory();
-                break;
+				LoseOneMemory();
+				break;
             default:
                 break;
         }
