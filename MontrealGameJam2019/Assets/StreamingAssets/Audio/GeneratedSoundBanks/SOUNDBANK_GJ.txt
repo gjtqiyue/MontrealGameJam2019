@@ -11,11 +11,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	2110825224	Play_PLAYER_DEATH_ALIVE			\Default Work Unit\Play_PLAYER_DEATH_ALIVE	
 	2657800154	Play_ONOFF_01			\Default Work Unit\Play_ONOFF_01	
 	2892140914	Play_PLAYER_KNOCK_GRAVE			\Default Work Unit\Play_PLAYER_KNOCK_GRAVE	
-	3083087645	PLAYER_DEATH			\Default Work Unit\PLAYER_DEATH	
 	3422020322	Stop_AMBIANCE_MENU			\Default Work Unit\Stop_AMBIANCE_MENU	
 	3509424520	Memory			\Default Work Unit\Memory	
 	3701980593	Play_FOOD_PICKUP			\Default Work Unit\Play_FOOD_PICKUP	
 	4169444829	Play_TIMER			\Default Work Unit\Play_TIMER	
+	4280382133	Character_Death			\Default Work Unit\Character_Death	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	305217939	FOODGOODBAD			\Default Work Unit\FOODGOODBAD	
@@ -41,6 +41,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	255628764	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMBIANT\GRAVEYARD_AMBIANCE\GRAVEYARD_AMBIANCE_NIGHT\NIGHT_SFX\OWL\Silence\Wwise Silence	
 	269652501	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMBIANT\GRAVEYARD_AMBIANCE\GRAVEYARD_AMBIANCE_NIGHT\NIGHT_PAD\Aigu\Silence\Wwise Silence	
 	276110696	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMBIANT\GRAVEYARD_AMBIANCE\GRAVEYARD_AMBIANCE_NIGHT\NIGHT_PAD\Dark\Silence\Wwise Silence	
+	324828838	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\OBJECT\GRAVE\GRAVE_OPENING\GRAVE_OPENING\BAT\Silence\Wwise Silence	
 	587047421	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMBIANT\GRAVEYARD_AMBIANCE\GRAVEYARD_AMBIANCE_NIGHT\NIGHT_SFX\METAL\Silence\Wwise Silence	
 	799663257	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\PLAYER\PLAYER_MC_FOLEY\PLAYER_FOOTSTEPS_DIRT\PLAYER_FOOTSTEPS_LEAVES\Silence\Wwise Silence	
 	821264338	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMBIANT\GRAVEYARD_AMBIANCE\GRAVEYARD_AMBIANCE_NIGHT\NIGHT_SFX\LEAVES\Silence\Wwise Silence	

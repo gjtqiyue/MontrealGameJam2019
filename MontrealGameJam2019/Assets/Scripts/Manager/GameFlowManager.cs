@@ -14,7 +14,10 @@ public enum GameState
 }
 
 public class GameFlowManager : ManagerBase<GameFlowManager>
+
 {
+
+    public AK.Wwise.Event MyEvent;
 
 	[SerializeField]
 	private SerializedLevelDataList levelDatas;
@@ -132,7 +135,8 @@ public class GameFlowManager : ManagerBase<GameFlowManager>
 		CharacterScript sc = player.GetComponent<CharacterScript>();
 		if (inGameUI != null) {
 			inGameUI.Destroy(sc);
-		}
+            MyEvent.Post(gameObject);
+        }
 		UIManager.Instance.DeadGame();
 
 		safeInvoke(OnPlayerDead);

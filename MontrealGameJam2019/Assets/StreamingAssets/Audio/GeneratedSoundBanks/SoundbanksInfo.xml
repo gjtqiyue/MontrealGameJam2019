@@ -33,12 +33,13 @@
 			<ShortName>SOUNDBANK_GJ</ShortName>
 			<Path>SOUNDBANK_GJ.bnk</Path>
 			<IncludedEvents>
+				<Event Id="4280382133" Name="Character_Death" ObjectPath="\Events\Default Work Unit\Character_Death"/>
 				<Event Id="733168346" Name="GAME_START" ObjectPath="\Events\Default Work Unit\GAME_START"/>
 				<Event Id="3509424520" Name="Memory" ObjectPath="\Events\Default Work Unit\Memory"/>
 				<Event Id="3701980593" Name="Play_FOOD_PICKUP" ObjectPath="\Events\Default Work Unit\Play_FOOD_PICKUP"/>
 				<Event Id="1323767302" Name="Play_GIRL_LAUGHING" ObjectPath="\Events\Default Work Unit\Play_GIRL_LAUGHING"/>
 				<Event Id="1403698928" Name="Play_GRAVE_OPENING" ObjectPath="\Events\Default Work Unit\Play_GRAVE_OPENING"/>
-				<Event Id="1123583895" Name="Play_GRAVEYARD_AMBIANCE_NIGHT" ObjectPath="\Events\Default Work Unit\Play_GRAVEYARD_AMBIANCE_NIGHT"/>
+				<Event Id="1123583895" Name="Play_GRAVEYARD_AMBIANCE_NIGHT" ObjectPath="\Events\Default Work Unit\Play_GRAVEYARD_AMBIANCE_NIGHT" MaxAttenuation="100.000000"/>
 				<Event Id="1160194499" Name="Play_GRAVEYARD_AMBIANCE_TIMEOFDAY" ObjectPath="\Events\Default Work Unit\Play_GRAVEYARD_AMBIANCE_TIMEOFDAY"/>
 				<Event Id="2657800154" Name="Play_ONOFF_01" ObjectPath="\Events\Default Work Unit\Play_ONOFF_01"/>
 				<Event Id="2110825224" Name="Play_PLAYER_DEATH_ALIVE" ObjectPath="\Events\Default Work Unit\Play_PLAYER_DEATH_ALIVE"/>
@@ -46,7 +47,6 @@
 				<Event Id="2892140914" Name="Play_PLAYER_KNOCK_GRAVE" ObjectPath="\Events\Default Work Unit\Play_PLAYER_KNOCK_GRAVE"/>
 				<Event Id="4169444829" Name="Play_TIMER" ObjectPath="\Events\Default Work Unit\Play_TIMER"/>
 				<Event Id="630493598" Name="Play_WOMAN_LAUGHING" ObjectPath="\Events\Default Work Unit\Play_WOMAN_LAUGHING"/>
-				<Event Id="3083087645" Name="PLAYER_DEATH" ObjectPath="\Events\Default Work Unit\PLAYER_DEATH"/>
 				<Event Id="3422020322" Name="Stop_AMBIANCE_MENU" ObjectPath="\Events\Default Work Unit\Stop_AMBIANCE_MENU" MaxAttenuation="0.000000"/>
 				<Event Id="685626117" Name="UIConfirm" ObjectPath="\Events\Default Work Unit\UIConfirm"/>
 				<Event Id="1791189246" Name="UIEND" ObjectPath="\Events\Default Work Unit\UIEND"/>

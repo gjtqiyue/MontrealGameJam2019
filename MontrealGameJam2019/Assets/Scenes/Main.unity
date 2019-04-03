@@ -56451,6 +56451,12 @@ PrefabInstance:
       propertyPath: endingTimeline
       value: 
       objectReference: {fileID: 1689410345}
+    - target: {fileID: 9049471313193578105, guid: 1ab7f25c5b83b514e9f2ca52af791aa1,
+        type: 3}
+      propertyPath: MyEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e908016125614615b964727838f8ce6,
+        type: 2}
     - target: {fileID: 133560588, guid: 1ab7f25c5b83b514e9f2ca52af791aa1, type: 3}
       propertyPath: player
       value: 

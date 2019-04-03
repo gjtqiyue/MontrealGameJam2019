@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CHARACTER_DEATH = 4280382133U;
         static const AkUniqueID GAME_START = 733168346U;
         static const AkUniqueID MEMORY = 3509424520U;
         static const AkUniqueID PLAY_FOOD_PICKUP = 3701980593U;
@@ -26,7 +27,6 @@ namespace AK
         static const AkUniqueID PLAY_PLAYER_KNOCK_GRAVE = 2892140914U;
         static const AkUniqueID PLAY_TIMER = 4169444829U;
         static const AkUniqueID PLAY_WOMAN_LAUGHING = 630493598U;
-        static const AkUniqueID PLAYER_DEATH = 3083087645U;
         static const AkUniqueID STOP_AMBIANCE_MENU = 3422020322U;
         static const AkUniqueID UICONFIRM = 685626117U;
         static const AkUniqueID UIEND = 1791189246U;
